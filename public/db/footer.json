@@ -1,0 +1,53 @@
+{
+  "description": "What brings innovation to everything we do is collaboration. We help each other, solve issues we face, we enjoys sweet talks. We shape up each other’s ideas to bring the best out of them.",
+  "usefulLinks": [
+    {
+      "title": "About Us",
+      "link": "/about"
+    },
+    {
+      "title": "Contact Us",
+      "link": "/contact"
+    },
+    {
+      "title": "Success Story",
+      "link": "/success-stories"
+    },
+    {
+      "title": "Free Seminar Schedule",
+      "link": "/free-seminar"
+    },
+    {
+      "title": "Mentors",
+      "link": "/mentors?title=Mentors"
+    },
+    {
+      "title": "Team",
+      "link": "/mentors?title=Team"
+    },
+    {
+      "title": "Refund Policy",
+      "link": ""
+    }
+  ],
+  "contacts": [
+    {
+      "icon": "Phone",
+      "title": "+88 01321231802"
+    },
+    {
+      "icon": "Mail",
+      "title": "info@bdcallingacademy.com"
+    },
+    {
+      "icon": "MapPinned",
+      "title": "Daisy Garden, House 14,Block A, Banasree, main road, Dhaka-1219"
+    }
+  ],
+  "paymentImages": [
+    { "imgLink": "/images/bkash.png", "title": "bkash" },
+    { "imgLink": "/images/nagad.png", "title": "nagad" },
+    { "imgLink": "/images/rocket.png", "title": "rocket" },
+    { "imgLink": "/images/ssl.png", "title": "ssl" }
+  ]
+}

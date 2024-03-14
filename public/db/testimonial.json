@@ -1,0 +1,35 @@
+{
+  "testimonialList": [
+    {
+      "id": 1,
+      "image": "https://i.postimg.cc/Wzbs3XYH/272673697-5002314906492117-8927032451531794157-n.jpg",
+      "name": "Md. Sanzid Rayhan",
+      "feedback": "“TbdCalling Academy is one of the best institutes in Bangladesh. I have completed Almost three month course in Digital marketing from bdCalling Academy. The classes helped me with my knowledge of Social Media Marketing, SEo, Google Ads, Email Marketing and so on. I would say it was the best option for me. Moreover thank you bdCalling Academy for all the Support and opportunity."
+    },
+
+    {
+      "id": 2,
+      "image": "https://i.postimg.cc/Wzbs3XYH/272673697-5002314906492117-8927032451531794157-n.jpg",
+      "name": "Nishat Moni Liza",
+      "feedback": "“I took the Lead Generation with Data Entry course which was for 2 months. I am very much satisfied with the behavior of the employees in charge here. The trainers are also standing in the same row regarding their behavior. I am happy to say that I spend my precious time around some good People."
+    },
+    {
+      "id": 3,
+      "image": "https://i.postimg.cc/Wzbs3XYH/272673697-5002314906492117-8927032451531794157-n.jpg",
+      "name": "Asaduzzaman",
+      "feedback": "Hello bdCalling,I never thought that I would create a website, which has come true through the help of bdCalling Academy from where I completed WordPress Course. It's a great pleasure taking a course from there. We had an excellent time with all. There is a big hand clap for all of my mentors and the people of the training sections. We learned a lot from bdCalling Academy"
+    },
+    {
+      "id": 4,
+      "image": "https://i.postimg.cc/Wzbs3XYH/272673697-5002314906492117-8927032451531794157-n.jpg",
+      "name": "Md Masum Rana",
+      "feedback": "Completing the Mobile App Development With Flutter course with bdCalling Academy was totally satisfactory for me as I think I have learned a lot and developed my skill from the trainers of bdCalling Academy. They are too good in case of their manners and efforts."
+    },
+    {
+      "id": 5,
+      "image": "https://i.postimg.cc/Wzbs3XYH/272673697-5002314906492117-8927032451531794157-n.jpg",
+      "name": "Anonymous",
+      "feedback": "Another most important thing I must say is that initially I was insecure and unsure whether I would get a job or not, but with the proper guidelines and the assistance of the mentors, I, at last, got the job I ever wanted, Alhamdulillah. "
+    }
+  ]
+}
