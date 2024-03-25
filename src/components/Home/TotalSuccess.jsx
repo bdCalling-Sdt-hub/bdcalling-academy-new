@@ -7,7 +7,7 @@ const TotalSuccess = () => {
   const isInView = useInView(ref, { once: true });
 
   const successList = [
-    { title: "Successful Students", total: 1000 },
+    { title: "Successful Students", total: 2000 },
     { title: "Skilled Job Holders", total: 800 },
     { title: "Success Ratio", total: 80 },
     { title: "Professional Mentors", total: 20 },

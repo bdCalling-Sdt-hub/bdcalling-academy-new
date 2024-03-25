@@ -26,7 +26,7 @@ const Banner = () => {
         <div className="lg:flex items-center gap-8 container py-24">
           <div className="order-2 lg:order-1 w-full lg:w-[700px]">
             <Reveal>
-              <h2 className="text-5xl  rounded bg-gradient-to-r from-[#93efff5b] to-[#bee1ffb2] text-[#2397fb] p-1 font-medium relative lg:w-4/6">
+              <h2 className="text-4xl  rounded bg-gradient-to-r from-[#93efff5b] to-[#bee1ffb2] text-[#2397fb] p-1 font-medium relative lg:w-4/6">
                 Let&#39;s Learn, Earn <br /> & Grow{" "}
                 <span
                   className=" text-4xl  text-[#586faffa]"

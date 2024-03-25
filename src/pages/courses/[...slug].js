@@ -1,8 +1,8 @@
 import FlexItem from "@/components/Common/FlexItem";
 import CourseDetailDescription from "@/components/CourseDetail/CourseDetailDescription";
-import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { baseUrl } from "@/config";
+import RootLayout from "@/Layouts/RootLayout";
 import MetaTag from "@/shared/MetaTag";
 import { Book, Clock, Globe, Presentation, Users } from "lucide-react";
 import { useRouter } from "next/router";

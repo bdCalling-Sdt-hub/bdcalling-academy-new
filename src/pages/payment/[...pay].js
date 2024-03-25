@@ -1,4 +1,4 @@
-import RootLayout from "@/components/Layouts/RootLayout";
+import RootLayout from "@/Layouts/RootLayout";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 

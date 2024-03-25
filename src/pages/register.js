@@ -1,4 +1,4 @@
-import RootLayout from "@/components/Layouts/RootLayout";
+import RootLayout from "@/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { baseUrl } from "@/config";
@@ -56,32 +56,37 @@ const Register = () => {
     <div className="container my-24">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
         <div className="order-2 lg:order-1">
+          <img src="/images/login.png" alt="" className="mr-auto w-[86%]" />
+        </div>
+        <div className="order-1 lg:order-2 ">
           <div className="mb-8">
             <h2 className="font-semibold text-2xl">Create a new account</h2>
             <p>Enter your details to register</p>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="mb-4">
-              <Input
-                type="text"
-                placeholder="Full Name"
-                name="fullName"
-                {...register("fullName", { required: true })}
-              />
-              {errors.fullName && (
-                <span className="text-red-500">Name is required</span>
-              )}
-            </div>
-            <div className="mb-4">
-              <Input
-                type="text"
-                placeholder="User Name"
-                name="userName"
-                {...register("userName", { required: true })}
-              />
-              {errors.userName && (
-                <span className="text-red-500">Username is required</span>
-              )}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+              <div className="mb-4">
+                <Input
+                  type="text"
+                  placeholder="Full Name"
+                  name="fullName"
+                  {...register("fullName", { required: true })}
+                />
+                {errors.fullName && (
+                  <span className="text-red-500">Name is required</span>
+                )}
+              </div>
+              <div className="mb-4">
+                <Input
+                  type="text"
+                  placeholder="User Name"
+                  name="userName"
+                  {...register("userName", { required: true })}
+                />
+                {errors.userName && (
+                  <span className="text-red-500">Username is required</span>
+                )}
+              </div>
             </div>
             <div className="mb-4">
               <Input
@@ -132,7 +137,10 @@ const Register = () => {
 
             {error && <p className="text-red-500">{error}</p>}
 
-            <Button className="w-full py-6 bg-primary mt-5" disabled={loading}>
+            <Button
+              className="w-full py-6  mt-5 hover:bg-primary"
+              disabled={loading}
+            >
               Register
             </Button>
           </form>
@@ -146,13 +154,6 @@ const Register = () => {
               Sign In
             </Button>
           </p>
-        </div>
-        <div className="order-1 lg:order-2">
-          <img
-            src="https://learnwithsumit.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogin.cc7f1c14.png&w=640&q=75"
-            alt=""
-            className="ml-auto"
-          />
         </div>
       </div>
     </div>

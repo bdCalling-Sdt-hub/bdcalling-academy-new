@@ -8,7 +8,7 @@ const url = cloud
   : "http://192.168.10.13:8000/api/";
 
 const imageUrl = imgCloud
-  ? "https://myserver.bdcallingacademy.com"
+  ? "https://myserver.bdcallingacademy.com/public"
   : "http://192.168.10.13:8000";
 
 export const baseUrl = axios.create({

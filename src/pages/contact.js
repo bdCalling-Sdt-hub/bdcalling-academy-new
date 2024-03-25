@@ -1,7 +1,7 @@
 import TopHeading from "@/components/Common/TopHeading";
 import FormSection from "@/components/Contact/FormSection";
-import RootLayout from "@/components/Layouts/RootLayout";
 import useCategory from "@/hooks/useCategory";
+import RootLayout from "@/Layouts/RootLayout";
 import MetaTag from "@/shared/MetaTag";
 import dynamic from "next/dynamic";
 

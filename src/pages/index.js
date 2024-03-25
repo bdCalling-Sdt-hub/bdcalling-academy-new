@@ -7,8 +7,8 @@ import JoinUs from "@/components/Home/JoinUs";
 import StudentSuccess from "@/components/Home/StudentSuccess";
 import Testimonial from "@/components/Home/Testimonial";
 import TotalSuccess from "@/components/Home/TotalSuccess";
-import RootLayout from "@/components/Layouts/RootLayout";
 import useCategory from "@/hooks/useCategory";
+import RootLayout from "@/Layouts/RootLayout";
 import MetaTag from "@/shared/MetaTag";
 import dynamic from "next/dynamic";
 

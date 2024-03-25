@@ -1,7 +1,7 @@
 import TopHeading from "@/components/Common/TopHeading";
-import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { baseUrl } from "@/config";
+import RootLayout from "@/Layouts/RootLayout";
 import MetaTag from "@/shared/MetaTag";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";

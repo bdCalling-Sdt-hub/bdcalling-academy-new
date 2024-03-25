@@ -1,8 +1,8 @@
 import CourseCard from "@/components/Common/CourseCard";
 import SkeletonCard from "@/components/Common/SkeletonCard";
-import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { baseUrl } from "@/config";
+import RootLayout from "@/Layouts/RootLayout";
 import MetaTag from "@/shared/MetaTag";
 import { useEffect, useState } from "react";
 

@@ -1,9 +1,9 @@
 const About = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center lg:-mt-5">
       <div>
         <img
-          src="https://i.postimg.cc/J72yMLMc/ezgif-com-speed.gif"
+          src="https://i.postimg.cc/vZRDmynF/Collab.gif"
           className="animate__animated animate__zoomIn"
           alt="banner image"
         />

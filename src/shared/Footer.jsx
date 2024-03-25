@@ -13,7 +13,7 @@ import Link from "next/link";
 import footerLink from "../../public/db/footer.json";
 
 const Footer = () => {
-  const { usefulLinks, description, contacts, paymentImages } = footerLink;
+  const { usefulLinks, description, paymentImages } = footerLink;
   const { category: categories } = useCategory();
 
   return (
@@ -143,10 +143,15 @@ const Footer = () => {
       <div className="border-t py-7">
         <div className="container lg:flex items-center justify-between">
           <div>
-            <a href="#" className="border-r mr-1 px-1">
+            <Link
+              href="/privacy-policy"
+              className="border-r mr-1 px-1 hover:underline"
+            >
               Privacy Policy
-            </a>
-            <a href="#">Terms & Conditions</a>
+            </Link>
+            <Link href="/terms-and-conditions" className="hover:underline">
+              Terms & Conditions
+            </Link>
           </div>
           <div>
             <p>© 2024 Bdcalling Academy. All Rights Reserved.</p>

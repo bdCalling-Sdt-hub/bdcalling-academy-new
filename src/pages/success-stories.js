@@ -1,6 +1,6 @@
 import Reveal from "@/animation/FramerMotion/Reveal";
-import RootLayout from "@/components/Layouts/RootLayout";
 import PopularCourses from "@/components/SuccessStories/PopularCourses";
+import RootLayout from "@/Layouts/RootLayout";
 import MetaTag from "@/shared/MetaTag";
 import dynamic from "next/dynamic";
 

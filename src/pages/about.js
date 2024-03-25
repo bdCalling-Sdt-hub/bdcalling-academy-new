@@ -5,7 +5,7 @@ import OurVision from "@/components/About/OurVision";
 import TotalCourse from "@/components/About/TotalCourse";
 import WhatBdCalling from "@/components/About/WhatBdCalling";
 import Subscribe from "@/components/Common/Subscribe";
-import RootLayout from "@/components/Layouts/RootLayout";
+import RootLayout from "@/Layouts/RootLayout";
 import MetaTag from "@/shared/MetaTag";
 
 const AboutPage = () => {

@@ -1,10 +1,10 @@
 import TopHeading from "@/components/Common/TopHeading";
-import RootLayout from "@/components/Layouts/RootLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { baseUrl } from "@/config";
 import useCategory from "@/hooks/useCategory";
+import RootLayout from "@/Layouts/RootLayout";
 import MetaTag from "@/shared/MetaTag";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
