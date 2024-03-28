@@ -17,7 +17,7 @@ const ExpertCard = ({ data }) => {
       <CardHeader className="">
         <img
           src={src}
-          alt=""
+          alt="Team member picture"
           className="rounded-md h-[340px] w-full object-cover"
           loading="lazy"
         />

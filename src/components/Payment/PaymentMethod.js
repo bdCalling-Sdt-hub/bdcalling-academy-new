@@ -1,5 +1,6 @@
 import { baseUrl } from "@/config";
 import { BadgeDollarSign, Lock, PhoneCall } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 import FlexItem from "../Common/FlexItem";
 import { Button } from "../ui/button";
@@ -10,6 +11,7 @@ const PaymentMethod = ({ data }) => {
   const [couponPrice, setCouponPrice] = useState();
   let id, title, price, discountPrice, date;
   const [gateway, setGateway] = useState("sslcommerze");
+  const [agreed, setAgreed] = useState(false);
 
   if (Array.isArray(data) && data.length >= 5) {
     let [item1, item2, item3, item4, item5] = data;
@@ -196,9 +198,46 @@ const PaymentMethod = ({ data }) => {
             <p className="text-lg">BDT {amount}</p>
           </FlexItem>
         </div>
+
+        <div className="flex items-center gap-2 mb-5">
+          <input
+            type="checkbox"
+            id="agree"
+            onChange={(e) => setAgreed(e.target.checked)}
+          />
+          <label
+            htmlFor="agree"
+            className="text-sm font-medium leading-none cursor-pointer"
+          >
+            I accept all{" "}
+            <Link
+              href="/privacy-policy"
+              className="text-primary hover:underline"
+            >
+              Terms
+            </Link>
+            ,
+            <Link
+              href="/terms-and-conditions"
+              className="text-primary hover:underline"
+            >
+              privacy policy
+            </Link>
+            <span className="mx-1">and</span>
+            <Link
+              href="/terms-and-conditions"
+              className="text-primary hover:underline"
+            >
+              refund policy
+            </Link>{" "}
+            of Bdcalling academy platform
+          </label>
+        </div>
+
         <Button
           className="flex gap-1 bg-primary py-6 px-8 w-full"
           onClick={handlePayment}
+          disabled={!agreed}
         >
           <p className="text-md uppercase">Complete Payment</p>
           <BadgeDollarSign size={20} />

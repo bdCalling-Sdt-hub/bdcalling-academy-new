@@ -69,7 +69,7 @@ const Courses = ({ categories }) => {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 gap-y-6 my-16">
         {loading ? (
-          <SkeletonCard />
+          [...Array(9).keys()].map((index) => <SkeletonCard key={index} />)
         ) : courses.length > 0 ? (
           courses.map((course, index) => (
             <CourseCard key={index} course={course} />

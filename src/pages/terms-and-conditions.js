@@ -11,11 +11,16 @@ const TermAndConditionPage = () => {
         <div>
           {termsData.map((data, index) => (
             <div key={index} className="mt-4">
-              <h2 className="text-lg">
+              <h2 className="text-lg font-bold">
                 <span className="text-lg font-bold">{index + 1}. </span>
                 {data.title}
               </h2>
-              <p className="text-justify">{data.description}</p>
+              {data.desTitle && <p>{data.desTitle}</p>}
+              {data?.description.map((item, index) => (
+                <div key={index}>
+                  <p key={index}>{item}</p>
+                </div>
+              ))}
             </div>
           ))}
         </div>

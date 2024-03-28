@@ -17,19 +17,19 @@ const WhatBdCalling = () => {
           Softvence, and Backbenchers Studio.
         </p>
       </div>
-      <div className="relative">
-        <div className=" w-[88%] mx-auto">
+      <div className="relative group">
+        <div className=" w-[88%] mx-auto overflow-hidden scale-100">
           <img
             src="https://i.postimg.cc/8CMqRsPW/About-1.jpg"
             alt="image"
-            className="w-full h-80 object-cover rounded-lg animate__animated animate__zoomIn"
+            className="w-full h-80 object-cover rounded-lg  group-hover:scale-110 duration-500"
           />
         </div>
-        <div className="absolute -bottom-32 left-14 p-2 bg-white rounded-full">
+        <div className="absolute -bottom-32 left-20 p-2 bg-white rounded-full group-hover:left-0  duration-300">
           <img
             src="https://i.postimg.cc/vHSFMpN1/About-3.jpg"
             alt="image"
-            className="w-[200px] h-[200px] animate__animated animate__zoomIn rounded-[50%] object-cover"
+            className="w-[200px] h-[200px]  rounded-[50%] object-cover "
           />
         </div>
       </div>

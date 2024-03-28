@@ -1,6 +1,7 @@
 import { imgUrl } from "@/config";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import SkeletonCard from "../Common/SkeletonCard";
 import { Button } from "../ui/button";
 import Curriculum from "./TabContent/Curriculum";
 import Instructor from "./TabContent/Instructor";
@@ -16,11 +17,16 @@ const CourseDetailDescription = ({ data }) => {
 
   return (
     <div>
-      <img
-        src={`${imgUrl}/${course?.course?.courseThumbnail}`}
-        alt=""
-        className="w-full h-[450px] rounded mb-8"
-      />
+      {course?.course?.courseThumbnail ? (
+        <img
+          src={`${imgUrl}/${course?.course?.courseThumbnail}`}
+          alt="Course Image"
+          className="w-full h-[450px] rounded mb-8"
+        />
+      ) : (
+        <SkeletonCard />
+      )}
+
       <h2 className="capitalize text-3xl mt-4  font-bold">
         {course?.course?.courseName}
       </h2>

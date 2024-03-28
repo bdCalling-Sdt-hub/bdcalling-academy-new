@@ -1,21 +1,25 @@
 import RootLayout from "@/Layouts/RootLayout";
-import termsData from "../../public/db/terms.json";
+import policyData from "../../public/db/privacyPolicy.json";
 
 const PrivacyPolicyPage = () => {
   return (
     <div className="h-auto container py-8 ">
       <div className="mx-28">
-        <h2 className="text-3xl font-medium border-b pb-2 text-gray-500">
+        <h2 className="text-2xl font-bold text-gray-500 border-b pb-2">
           Privacy Policy
         </h2>
         <div>
-          {termsData.map((data, index) => (
+          {policyData.map((data, index) => (
             <div key={index} className="mt-4">
-              <h2 className="text-lg">
+              <h2 className="text-lg font-bold mb-1">
                 <span className="text-lg font-bold">{index + 1}. </span>
                 {data.title}
               </h2>
-              <p className="text-justify">{data.description}</p>
+              {data.description.map((item, index) => (
+                <p key={index} className="mb-1 text-lg">
+                  {item}
+                </p>
+              ))}
             </div>
           ))}
         </div>

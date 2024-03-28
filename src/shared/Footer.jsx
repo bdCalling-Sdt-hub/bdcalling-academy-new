@@ -13,7 +13,7 @@ import Link from "next/link";
 import footerLink from "../../public/db/footer.json";
 
 const Footer = () => {
-  const { usefulLinks, description, paymentImages } = footerLink;
+  const { usefulLinks, description, tradeLicense } = footerLink;
   const { category: categories } = useCategory();
 
   return (
@@ -29,7 +29,8 @@ const Footer = () => {
                 height={100}
               />
             </a>
-            <p className="mt-4">{description}</p>
+            <p className="mt-4 text-justify">{description}</p>
+
             <h4 className="font-bold mt-4 mb-2">Share Now</h4>
             <div className="flex items-center gap-2">
               <a
@@ -117,25 +118,19 @@ const Footer = () => {
               </p>
             </div>
           </nav>
-          <div></div>
-          <div>
-            <h2 className="text-lg font-semibold border-r-2 border-primary">
-              Online Transaction Method
-            </h2>
-          </div>
-          <nav className="lg:col-span-2">
-            <div className="flex gap-1">
-              {paymentImages.map((img, index) => (
-                <div key={index} className="bg-white  rounded-md px-2 py-1">
-                  <img
-                    src={img.imgLink}
-                    alt={`${img.title} logo`}
-                    width={img.title === "ssl" ? 150 : 80}
-                    height={80}
-                  />
-                </div>
-              ))}
-            </div>
+          <nav className="lg:col-span-4 mt-3 hidden lg:block">
+            <img
+              src="/images/sslcommerz.png"
+              alt="ssl"
+              className="rounded-lg"
+            />
+          </nav>
+          <nav className="lg:col-span-4 mt-3 block  lg:hidden">
+            <img
+              src="/images/sslcommerz.jpg"
+              alt="ssl"
+              className="rounded-lg"
+            />
           </nav>
         </div>
       </div>
@@ -155,6 +150,7 @@ const Footer = () => {
           </div>
           <div>
             <p>© 2024 Bdcalling Academy. All Rights Reserved.</p>
+            <p className="text-sm text-right">Trade License - {tradeLicense}</p>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 {
   "description": "What brings innovation to everything we do is collaboration. We help each other, solve issues we face, we enjoys sweet talks. We shape up each other’s ideas to bring the best out of them.",
+  "tradeLicense": "TRAD/DNCC/032933/2023",
   "usefulLinks": [
     {
       "title": "About Us",
@@ -43,11 +44,5 @@
       "icon": "MapPinned",
       "title": "Daisy Garden, House 14,Block A, Banasree, main road, Dhaka-1219"
     }
-  ],
-  "paymentImages": [
-    { "imgLink": "/images/bkash.png", "title": "bkash" },
-    { "imgLink": "/images/nagad.png", "title": "nagad" },
-    { "imgLink": "/images/rocket.png", "title": "rocket" },
-    { "imgLink": "/images/ssl.png", "title": "ssl" }
   ]
 }

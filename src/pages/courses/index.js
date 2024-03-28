@@ -32,7 +32,7 @@ const CourseHomePage = () => {
       <MetaTag title="Courses" />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 gap-y-6 my-12 container">
         {loading ? (
-          <SkeletonCard />
+          [...Array(6).keys()].map((index) => <SkeletonCard key={index} />)
         ) : courses.length > 0 ? (
           courses.map((course, index) => (
             <CourseCard key={index} course={course} />
