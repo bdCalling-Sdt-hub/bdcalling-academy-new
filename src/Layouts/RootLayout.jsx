@@ -15,12 +15,12 @@ const RootLayout = ({ children }) => {
 
       {open && (
         <div className="fixed inset-0 z-50 bg-white/5 backdrop-blur-sm ">
-          <div className="fixed left-[50%] top-[50%] z-50  w-[900px] translate-x-[-50%] translate-y-[-50%] ">
+          <div className="fixed left-[50%] top-[50%] z-50 w-full lg:w-[900px] translate-x-[-50%] translate-y-[-50%] ">
             <div onClick={() => setOpen(false)}>
               <Link href="/offer">
                 <img
                   src="/images/offer.jpg"
-                  className="w-full h-[460px] rounded"
+                  className="w-full rounded"
                   alt=""
                   loading="lazy"
                 />

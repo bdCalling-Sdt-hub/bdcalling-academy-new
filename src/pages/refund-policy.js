@@ -11,7 +11,7 @@ const RefundPolicy = () => {
   ];
   return (
     <div className="h-[500px] container py-8">
-      <div className="mx-28">
+      <div className="lg:mx-28">
         <h2 className="text-2xl font-bold text-gray-500 border-b pb-2">
           Refund Policy
         </h2>

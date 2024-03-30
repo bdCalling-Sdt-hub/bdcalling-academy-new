@@ -4,7 +4,7 @@ import termsData from "../../public/db/terms.json";
 const TermAndConditionPage = () => {
   return (
     <div className="h-auto container py-8 ">
-      <div className="mx-28">
+      <div className="lg:mx-28">
         <h2 className="text-3xl font-medium border-b pb-2 text-gray-500">
           Terms and Conditions
         </h2>

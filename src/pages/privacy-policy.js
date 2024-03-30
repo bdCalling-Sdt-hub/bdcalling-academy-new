@@ -4,7 +4,7 @@ import policyData from "../../public/db/privacyPolicy.json";
 const PrivacyPolicyPage = () => {
   return (
     <div className="h-auto container py-8 ">
-      <div className="mx-28">
+      <div className="lg:mx-28">
         <h2 className="text-2xl font-bold text-gray-500 border-b pb-2">
           Privacy Policy
         </h2>
