@@ -2,24 +2,22 @@ import RootLayout from "@/Layouts/RootLayout";
 
 const RefundPolicy = () => {
   const data = [
-    "1). Refund request can be made within maximum 7 days of course enrollment. If you request a refund within 7 days of enrolment, your full course fee will be unconditionally refunded. You cannot request a course fee refund after 7 days have passed after course enrollment. (conditions apply)",
-    "2). BDKling Academy may adjust the refundable amount against any course fee.",
-    "3). Refundable amount can be adjusted by reference to other students before the commencement of the course.",
-    "4). If you want to join any subsequent batch, you can adjust the amount, but the remaining amount must be paid except for those classes that are completed.",
-    "5). If you want to cancel the course during the class, the remaining amount will be refunded considering the number of classes that will be completed.",
-    "6). 100% money back guarantee if you are not satisfied after completing the course at Bidikling Academy (must be informed within 1 week of course completion).",
+    "১).কোর্স এনরোল করার সর্বোচ্চ 7 দিনের মধ্যে রিফান্ড রিকুয়েস্ট করা যাবে। যদি আপনি এনরোল করার 7 দিনের মধ্যে রিফান্ড রিকুয়েস্ট করেন, তাহলে নিঃশর্তভাবে আপনার পুরো কোর্স ফি রিফান্ড করে দেয়া হবে। কোর্স এনরোলমেন্ট করার পর 7 দিন অতিবাহিত হয়ে যাবার পর আপনি কোর্স ফি রিফান্ড রিকুয়েস্ট করতে পারবেন না।(শর্ত প্রযোজ্য)",
+    "২) বিডিকলিং একাডেমি’র  যে কোনো কোর্স  ফি এর সাথে, ফেরতযোগ্য টাকা সামঞ্জস্য করতে পারবে।",
+    "৩) কোর্স শুরু হবার আগে অন্য শিক্ষার্থীকে রেফারেন্স করে, ফেরতযোগ্য  টাকা সামঞ্জস্য করতে পারবে। ",
+    "৪) পরবর্তী যেকোন ব্যাচে জয়েন করতে চাইলে, টাকা সামঞ্জস্য করতে পারবে, তবে  যে কয়েকটি ক্লাস সম্পূর্ণ হবে, সেই ক্লাস গুলো বাদে বাকি টাকা পরিশোধ করতে হবে।",
+    "৫) ক্লাস চলাকালীন সময়ে কোর্স ক্যান্সেল করতে চাইলে, যে কয়েকটি ক্লাস সম্পূর্ণ হবে, সেই ক্লাস গুলোর উপর বিবেচনা করে বাকি টাকা ফেরত দেয়া হবে।",
+    "৬) বিডিকলিং একাডেমিতে কোর্স সম্পন্ন করে সন্তুষ্ট না হলে ১০০% টাকা ফেরত গ্যারান্টি (অবশ্যই কোর্স শেষ হওয়ার ১ সপ্তাহের মধ্যে জানাতে হবে)। ",
   ];
   return (
-    <div className="h-[500px] container py-8">
+    <div className="h-auto container py-8">
       <div className="lg:mx-28">
-        <h2 className="text-2xl font-bold text-gray-500 border-b pb-2">
-          Refund Policy
-        </h2>
+        <h2 className="text-2xl font-bold text-gray-500">রিফান্ড পলিসি</h2>
+        <p className="mb-4">
+          একজন শিক্ষার্থী কোর্স চলাকালীন সময়ে, কোর্স বাতিল করে টাকা ফেরত নিতে
+          চাইলে নিম্নলিখিত নিয়মগুলো প্রযোজ্য:
+        </p>
         <div className="mt-5">
-          <h2 className="mb-4 text-xl">
-            If a student wants to cancel the course and get a refund during the
-            course, the following rules apply:
-          </h2>
           {data.map((item, index) => (
             <p key={index} className="mt-2">
               {item}
@@ -27,6 +25,7 @@ const RefundPolicy = () => {
           ))}
         </div>
       </div>
+      {/* <iframe src="/images/pdf.pdf" width="100%" height="1000px"></iframe> */}
     </div>
   );
 };
