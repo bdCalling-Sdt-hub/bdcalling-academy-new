@@ -199,3 +199,16 @@ body {
 .scroll-container {
   overflow-x: scroll;
 }
+
+.category-scroll::-webkit-scrollbar {
+  height: 7px;
+}
+
+.category-scroll::-webkit-scrollbar-thumb {
+  background: #1796fd;
+  border-radius: 5px;
+}
+
+.category-scroll::-webkit-scrollbar-track {
+  background: #f0f0f1;
+}

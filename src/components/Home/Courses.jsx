@@ -39,7 +39,7 @@ const Courses = ({ categories }) => {
           </Button>
         </Link>
       </div>
-      <div className="mt-8 text-center flex flex-col lg:flex-row  gap-2">
+      <div className="mt-8 text-center flex flex-col lg:flex-row  gap-2 overflow-x-scroll pb-5 category-scroll">
         <Button
           variant="link"
           onClick={() => setTitle(0)}

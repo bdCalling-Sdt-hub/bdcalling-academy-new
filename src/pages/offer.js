@@ -107,7 +107,7 @@ const OfferPage = () => {
           ১২১৯, ঢাকা।
         </p>
         <p>মোবাইল: 01321-231802</p>
-        <p>অথবা ভিজিট করুনঃ www.bdcallingacademy.com</p>
+        <p>অথবা ভিজিট করুনঃ www.bdcallingacademy.com </p>
       </div>
     </div>
   );
