@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const RootLayout = ({ children }) => {
   const Navbar = dynamic(() => import("@/shared/Navbar"), { ssr: false });
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <div>
       <Navbar />
