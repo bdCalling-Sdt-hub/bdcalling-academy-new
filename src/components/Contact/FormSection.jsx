@@ -10,6 +10,7 @@ import { Textarea } from "../ui/textarea";
 
 const FormSection = ({ categories }) => {
   let [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const {
     register,
     handleSubmit,
@@ -34,7 +35,7 @@ const FormSection = ({ categories }) => {
         }
         reset();
       })
-      .catch((err) => console.log(err))
+      .catch((err) => setError(err.response.data.errors))
       .finally(() => {
         setLoading(false);
       });
@@ -131,12 +132,12 @@ const FormSection = ({ categories }) => {
 
           <Input
             type="text"
-            name="subject"
-            {...register("subject", { required: true })}
+            name="category"
+            {...register("category", { required: true })}
             placeholder="Subject"
           />
           <p>
-            {errors.name && (
+            {errors.category && (
               <span className="text-red-500">Subject is required</span>
             )}
           </p>
@@ -150,6 +151,13 @@ const FormSection = ({ categories }) => {
               <span className="text-red-500">Message is required</span>
             )}
           </p>
+
+          {error &&
+            Object.values(error).map((err, index) => (
+              <p key={index} className="text-red-500">
+                {err[0]}
+              </p>
+            ))}
           <Button type="submit" className="bg-primary" disabled={loading}>
             Submit
           </Button>
