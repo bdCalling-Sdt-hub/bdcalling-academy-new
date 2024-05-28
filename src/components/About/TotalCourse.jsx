@@ -8,7 +8,7 @@ const TotalCourse = () => {
   const successList = [
     { title: "Courses", total: 10 },
     { title: "Certified Teachers", total: 20 },
-    { title: "Students Enroll", total: 1200 },
+    { title: "Students Enroll", total: 2000 },
     { title: "Success Ratio", total: 80 },
   ];
 
