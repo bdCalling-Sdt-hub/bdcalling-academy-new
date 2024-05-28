@@ -12,6 +12,7 @@ const PaymentMethod = ({ data }) => {
   let id, title, price, discountPrice, date;
   const [gateway, setGateway] = useState("sslcommerze");
   const [agreed, setAgreed] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   if (Array.isArray(data) && data.length >= 5) {
     let [item1, item2, item3, item4, item5] = data;
@@ -54,7 +55,8 @@ const PaymentMethod = ({ data }) => {
       price: amount,
       gateway_name: gateway,
     };
-
+    setIsLoading(true);
+    //ssl commerze payment
     if (gateway === "sslcommerze") {
       baseUrl
         .post("/pay", value, {
@@ -66,7 +68,7 @@ const PaymentMethod = ({ data }) => {
         .then((res) => {
           if (res.data.status === "success") {
             const redirectUrl = res.data.data;
-
+            setIsLoading(false);
             if (typeof redirectUrl === "string" && redirectUrl.trim() !== "") {
               window.location.href = redirectUrl;
             } else {
@@ -74,9 +76,13 @@ const PaymentMethod = ({ data }) => {
             }
           }
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+          setIsLoading(false);
+        });
     }
 
+    //bkash payment
     if (gateway === "bkash") {
       baseUrl
         .post(`/bkash/create-payment`, value, {
@@ -87,10 +93,14 @@ const PaymentMethod = ({ data }) => {
         })
         .then((res) => {
           if (res.data) {
+            setIsLoading(false);
             window.location.href = res.data;
           }
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+          setIsLoading(false);
+        });
     }
   };
 
@@ -107,12 +117,12 @@ const PaymentMethod = ({ data }) => {
     //   image: "/images/nagad.png",
     //   color: "#ed1d26",
     // },
-    // {
-    //   title: "",
-    //   value: "sslcommerze",
-    //   image: "/images/ssl.png",
-    //   color: "",
-    // },
+    {
+      title: "",
+      value: "sslcommerze",
+      image: "/images/ssl.png",
+      color: "",
+    },
   ];
 
   return (
@@ -237,10 +247,16 @@ const PaymentMethod = ({ data }) => {
         <Button
           className="flex gap-1 bg-primary py-6 px-8 w-full"
           onClick={handlePayment}
-          disabled={!agreed}
+          disabled={!agreed || isLoading}
         >
-          <p className="text-md uppercase">Complete Payment</p>
-          <BadgeDollarSign size={20} />
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : (
+            <div className="flex items-center gap-2">
+              <p className="text-md uppercase">Complete Payment</p>
+              <BadgeDollarSign size={20} />
+            </div>
+          )}
         </Button>
         <p className="text-center mt-5 flex items-center justify-center gap-1">
           <Lock size={18} color="green" />

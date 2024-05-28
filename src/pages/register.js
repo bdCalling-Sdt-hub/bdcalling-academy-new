@@ -141,7 +141,7 @@ const Register = () => {
               className="w-full py-6  mt-5 hover:bg-primary"
               disabled={loading}
             >
-              Register
+              {loading ? "Loading..." : "Register"}
             </Button>
           </form>
           <p className="mt-5">
