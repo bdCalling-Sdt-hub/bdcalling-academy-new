@@ -16,8 +16,8 @@ const Banner = () => {
   const videoLinkLists = [
     {
       video:
-        "https://www.youtube.com/embed/ffnmrtUCqC4?autoplay=1&modestbranding=1&rel=0",
-      thumb: "https://i.postimg.cc/3WQKT0zD/Skill-Development-Thumbnail-02.jpg",
+        "https://www.youtube.com/embed/FtsFZkw2h-A?autoplay=1&modestbranding=1&rel=0",
+      thumb: "/images/bannerThumbnail.jpg",
     },
   ];
   return (
