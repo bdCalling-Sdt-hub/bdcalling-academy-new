@@ -6,11 +6,21 @@ const useCategory = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  const deleteCategories = [
+    "app development",
+    "Web Development",
+    "ux/ui design",
+  ];
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await baseUrl.get("/category");
-        setCategory(response.data.data);
+        const filterCategory = response?.data?.data.filter(
+          (category) => !deleteCategories.includes(category.category_name)
+        );
+
+        setCategory(filterCategory);
       } catch (err) {
         setError(err);
       } finally {
