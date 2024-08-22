@@ -11,6 +11,9 @@ const Courses = ({ categories }) => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  console.log(courses)
+  console.log(title)
+
   useEffect(() => {
     setLoading(true);
     baseUrl
@@ -31,7 +34,7 @@ const Courses = ({ categories }) => {
     <div className="container ">
       <div className="flex justify-between mt-24">
         <div>
-          <h2 className="text-2xl font-bold">Most Popular Courses</h2>
+          <h2 className="text-2xl font-bold">Popular Courses</h2>
         </div>
         <Link href="/courses">
           <Button className="bg-[#1796fd]">
@@ -67,7 +70,7 @@ const Courses = ({ categories }) => {
           </Button>
         ))}
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 gap-y-6 my-16">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 gap-y-6 my-16">
         {loading ? (
           [...Array(9).keys()].map((index) => <SkeletonCard key={index} />)
         ) : courses.length > 0 ? (

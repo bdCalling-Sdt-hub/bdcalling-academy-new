@@ -58,13 +58,13 @@ const CourseCard = ({ course }) => {
             </p>
           </div>
           <h2 className="my-3 text-xl h-12 capitalize">{courseName}</h2>
-          <div className="flex items-center justify-between my-4">
+          <div className=" space-y-2">
             <div className="lg:flex gap-4 items-center">
               <h2 className="text-lg font-bold">{discount_price}BDT</h2>
               <p className="line-through">BDT{price}</p>
             </div>
-            <div className="flex items-center gap-1">
-              <div className="flex">
+            <div className="flex items-center gap-1 ">
+              <div className="flex mb-4">
                 <Star size={20} color="#ffc60b" fill="#ffc60b" />
                 <Star size={20} color="#ffc60b" fill="#ffc60b" />
                 <Star size={20} color="#ffc60b" fill="#ffc60b" />

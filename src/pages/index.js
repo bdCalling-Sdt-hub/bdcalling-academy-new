@@ -3,7 +3,9 @@ import Banner from "@/components/Home/Banner";
 
 import Event from "@/components/Home/Event";
 import Exceptional from "@/components/Home/Exceptional";
+import Gallery from "@/components/Home/Gallery";
 import JoinUs from "@/components/Home/JoinUs";
+import RecordingCourse from "@/components/Home/RecordingCourse";
 import StudentSuccess from "@/components/Home/StudentSuccess";
 import Testimonial from "@/components/Home/Testimonial";
 import TotalSuccess from "@/components/Home/TotalSuccess";
@@ -26,6 +28,9 @@ const HomePage = () => {
         <DynamicCourses categories={category} />
       </Reveal>
       <Reveal>
+        <RecordingCourse />
+      </Reveal>
+      <Reveal>
         <Exceptional />
       </Reveal>
       <Reveal>
@@ -39,6 +44,9 @@ const HomePage = () => {
       </Reveal>
       <Reveal>
         <TotalSuccess />
+      </Reveal>
+      <Reveal>
+        <Gallery />
       </Reveal>
       <Reveal>
         <JoinUs />

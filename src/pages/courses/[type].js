@@ -27,8 +27,7 @@ const CoursesPage = () => {
     setLoading(true);
     baseUrl
       .get(
-        `/course?status=${status}&category=${
-          title | selectCategory
+        `/course?status=${status}&category=${title | selectCategory
         }&per_page=${courseLoad}`
       )
       .then((res) => {
@@ -42,8 +41,12 @@ const CoursesPage = () => {
       });
   }, [status, title, selectCategory, courseLoad]);
 
-  const coursesFilter = ["Online Courses", "Offline Courses", "Video Courses"];
 
+
+
+
+  const coursesFilter = ["Online Courses", "Offline Courses", "Video Courses"];
+  
   return (
     <div className="container">
       <MetaTag title="Courses" />
@@ -57,21 +60,22 @@ const CoursesPage = () => {
         </p>
         <SearchCourse setTitle={setTitle} />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 my-12">
-        <div className="space-y-4">
-          <AccordionCard title="Course Categories">
-            {catagories?.map((item, index) => (
-              <AccordionAnswerText
-                key={index}
-                data={item}
-                setSelectCategory={setSelectCategory}
-                selectCategory={selectCategory}
-              />
-            ))}
-          </AccordionCard>
-        </div>
-        <div className="col-span-2">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="space-y-4">
+        <AccordionCard title="Course Categories">
+          {catagories?.map((item, index) => (
+            <AccordionAnswerText
+              key={index}
+              data={item}
+              setSelectCategory={setSelectCategory}
+              selectCategory={selectCategory}
+            />
+          ))}
+        </AccordionCard>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 my-12">
+
+        <div className="col-span-4">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-2">
             {loading ? (
               [...Array(6).keys()].map((index) => <SkeletonCard key={index} />)
             ) : courses.length > 0 ? (

@@ -15,6 +15,16 @@ const Testimonial = () => {
   const [seeMore, setSeeMore] = useState(false);
   const [seeMoreId, setSeeMoreId] = useState();
 
+  const batches = ['21st Batch', '22nd Batch', '23rd Batch', '24th Batch'];
+  const courseTimes = ['3 month', '6 months',]
+  const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  console.log(getRandomElement(courseTimes))
+
+  const formattedTestimonials = testimonialList?.map(testimonials => ({
+    ...testimonials,
+    batch: getRandomElement(batches),
+    courseTime: getRandomElement(courseTimes)
+  }))
   const swiperContainerStyle = {
     width: "100%",
     height: "450px",
@@ -43,7 +53,9 @@ const Testimonial = () => {
           style={swiperContainerStyle}
         >
           {testimonialList.map((testimonial, index) => (
+
             <SwiperSlide key={index} className="mt-16">
+
               <div
                 className="p-5 rounded-md relative flex justify-center h-auto text-center"
                 style={{
@@ -62,7 +74,10 @@ const Testimonial = () => {
                 <div>
                   <div className="my-6">
                     <h2 className="text-xl">{testimonial?.name}</h2>
-                    {/* <p className="">{testimonial?.designation}</p> */}
+                    <div className="flex justify-between items-center my-5">
+                      <p className=""><span className="font-semibold">Batch</span> : {testimonial?.batch}</p>
+                      <p className=""> <span className="font-semibold">Course duration</span> : {testimonial?.courseTime}</p>
+                    </div>
                   </div>
                   <p>
                     {seeMore && testimonial.id === seeMoreId
