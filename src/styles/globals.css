@@ -212,3 +212,32 @@ body {
 .category-scroll::-webkit-scrollbar-track {
   background: #f0f0f1;
 }
+
+
+/* image scrolling */
+.scroll-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.scroll-content {
+  display: flex;
+  gap: 90px;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.image {
+  height: 80px;
+  width: 120px;
+}

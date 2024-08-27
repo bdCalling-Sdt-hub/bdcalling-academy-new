@@ -96,33 +96,21 @@ const Exceptional = () => {
 
 
       <div className="py-5 bg-gradient-to-t from-[#167afd] to-[#17b4fd]">
-        {/* <ParallaxText baseVelocity={-1}>
-          🔹Wordpress🔹Digital Marketing🔹Graphics Design🔹UX/UI Design🔹Lead
-          Generation & Data Entry
-        </ParallaxText> */}
-        {/* <ParallaxText baseVelocity={10} className="flex">
-            
-          
-            
-            <Image src={img4} className="pr-10" height={80} width={80} />
-            <Image src={img5} className="pr-10" height={80} width={80} />
-            <Image src={img7} className="pr-10" height={80} width={80} />
-            <Image src={img6} className="mr-5" height={80} width={80} /> 
-           
-        </ParallaxText> */}
-        <marquee behavior="scroll" direction="left" scrollamount="10" >
-          <div className="flex gap-20">
-            <Image src={img1} className="mr-5" height={100} width={120} />
-            <Image src={img6} className="mr-5" height={100} width={120} />
-            <Image src={img4} className="mr-5" height={100} width={120} />
-            <Image src={img5} className="mr-5" height={100} width={120} />
-            <Image className="pr-10" src={img7} height={100} width={120} />
-            <Image className="pr-10" src={img8} height={100} width={120} />
-            <Image className="pr-10" src={img9} height={100} width={120} />
-            <Image className="pr-10" src={img2} height={100} width={120} />
-            <Image className="pr-10" src={img3} height={100} width={120} />
+        
+
+        <div className="scroll-container">
+          <div className="scroll-content">
+            <Image src={img1} alt="Image 1" className="image" />
+            <Image src={img6} alt="Image 6" className="image" />
+            <Image src={img4} alt="Image 4" className="image" />
+            <Image src={img5} alt="Image 5" className="image" />
+            <Image src={img7} alt="Image 7" className="image" />
+            <Image src={img8} alt="Image 8" className="image" />
+            <Image src={img9} alt="Image 9" className="image" />
+            <Image src={img2} alt="Image 2" className="image" />
+            <Image src={img3} alt="Image 3" className="image" />
           </div>
-        </marquee>
+        </div>
       </div>
 
 
