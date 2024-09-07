@@ -9,14 +9,13 @@ import { Button } from "../ui/button";
 const Event = () => {
   const [events, setEvents] = useState([]);
   const [desLen, setDesLen] = useState(false);
-
   useEffect(() => {
     baseUrl
-      .get("/events")
-      .then((res) => setEvents(res?.data?.data))
+      .get("/event")
+      .then((res) => setEvents(res?.data?.data?.data))
       .catch((err) => console.log(err));
   }, []);
-
+  console.log(events)
   return (
     <div className="my-12 container">
       <HeadingText title={"Upcoming Events"} />
@@ -45,23 +44,19 @@ const Event = () => {
                   <p size={18} className="flex items-center gap-1">
                     <Clock8 size={18} color="#1796fd" />
                     <span className=" text-gray-600">
-                      {timeFormat(events[events.length - 1]?.starttime)}
+                      {timeFormat(events[events.length - 1]?.time)}
                     </span>
                     -
                     <span className=" text-gray-600">
-                      {timeFormat(events[events.length - 1]?.endtime)}
+                      {timeFormat(events[events.length - 1]?.end_time)}
                     </span>
                   </p>
                 </div>
                 <div className="flex items-center">
                   <p
-                    className={`${
-                      events[events.length - 1]?.status === "OFFLINE"
-                        ? " text-red-500 py-1 px-3 rounded-md"
-                        : " text-green-500 py-1 px-3 rounded-md"
-                    } text-md`}
+                    className={` text-md ${events[events.length - 1]?.status == 0 ? " text-red-500 py-1 px-3 rounded-md" : " text-green-500 py-1 px-3 rounded-md"}`}//
                   >
-                    {events[events.length - 1]?.status}
+                    {events[events.length - 1]?.status == 0 ? "OFFLINE" : "ONLINE"}
                   </p>
                   <Link href="/free-seminar">
                     <Button className="bg-primary">Join Seminar</Button>
@@ -71,15 +66,15 @@ const Event = () => {
               <div className="flex items-center  gap-1">
                 <MapPinned size={20} color="#1796fd" />
                 <p className="text-md capitalize text-gray-500">
-                  {events[events.length - 1]?.officeLocation}
+                  {events[events.length - 1]?.locations}
                 </p>
               </div>
               <h2 className="text-2xl capitalize my-2">
-                {events[events.length - 1]?.courseName}
+                {events[events.length - 1]?.course_name}
               </h2>
               <p>
                 {!desLen &&
-                  events[events.length - 1]?.description.slice(0, 150)}
+                  events[events.length - 1]?.descriptions.slice(0, 150)}
                 {!desLen && (
                   <span
                     className="text-primary cursor-pointer ml-1"
@@ -89,7 +84,7 @@ const Event = () => {
                   </span>
                 )}
 
-                {desLen && events[events.length - 1]?.description}
+                {desLen && events[events.length - 1]?.descriptions}
               </p>
             </div>
           </div>
@@ -116,19 +111,19 @@ const Event = () => {
                   </p>
                   <p className="flex items-center gap-1">
                     <Clock8 size={18} />
-                    <span>{timeFormat(event?.starttime)}</span>-
-                    <span>{timeFormat(event?.endtime)}</span>
+                    <span>{timeFormat(event?.time)}</span>-
+                    <span>{timeFormat(event?.end_time)}</span>
                   </p>
                 </div>
                 <h2 className="text-sm lg:text-xl  my-3 capitalize">
-                  {event?.courseName}
+                  {event?.course_name}
                 </h2>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

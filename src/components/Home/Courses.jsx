@@ -10,14 +10,10 @@ const Courses = ({ categories }) => {
   const [title, setTitle] = useState(0);
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  console.log(courses)
-  console.log(title)
-
   useEffect(() => {
     setLoading(true);
     baseUrl
-      .get(`/course?category=${title}`)
+      .get(`/filter-courses?course_category_id=${title || ''}`)
       .then((res) => {
         if (res.data) {
           setCourses(res.data?.data?.data);
@@ -29,7 +25,6 @@ const Courses = ({ categories }) => {
         setLoading(false);
       });
   }, [title]);
-
   return (
     <div className="container ">
       <div className="flex justify-between mt-24">
@@ -46,9 +41,8 @@ const Courses = ({ categories }) => {
         <Button
           variant="link"
           onClick={() => setTitle(0)}
-          className={`${
-            title === 0 ? "bg-[#1796fd] text-white" : ""
-          } text-md font-medium`}
+          className={`${title === 0 ? "bg-[#1796fd] text-white" : ""
+            } text-md font-medium`}
         >
           All
         </Button>
@@ -58,15 +52,10 @@ const Courses = ({ categories }) => {
             key={index}
             variant="link"
             onClick={() => setTitle(category.id)}
-            className={`${
-              title === category.id ? "bg-[#1796fd] text-white" : ""
-            }  text-md font-medium`}
+            className={`${title === category.id ? "bg-[#1796fd] text-white" : ""
+              }  text-md font-medium`}
           >
-            {category.category_name === "ux/ui design" ? (
-              <span>{`UX/UI Design`}</span>
-            ) : (
-              <span className="capitalize">{category.category_name}</span>
-            )}
+            <span className="capitalize">{category.category_name}</span>
           </Button>
         ))}
       </div>

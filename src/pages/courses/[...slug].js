@@ -11,49 +11,58 @@ import { useEffect, useState } from "react";
 const CourseDetail = () => {
   const router = useRouter();
   const params = router.query.slug;
-  const [courseDetail, setCourseDetail] = useState([]);
-
+  const [courseDetail, setCourseDetail] = useState({});
+  const [courseData, setCourseData] = useState({})
+  console.log('courseData', courseData?.data?.[0]?.course?.reviews)
   let id;
-
+  let name
   useEffect(() => {
     if (Array.isArray(params) && params.length >= 2) {
       id = params[1];
+      name = params[0];
       baseUrl
-        .get(`/class/${id}`)
+        .get(`/courses/${id}`)
         .then((res) => {
           setCourseDetail(res?.data?.data);
+        })
+        .catch((err) => console.log(err));
+      baseUrl
+        .get(`/filter-courses?course_name=${name}`)
+        .then((res) => {
+          setCourseData(res?.data?.data);
+          // console.log(res)
         })
         .catch((err) => console.log(err));
     }
   }, [params]);
 
-  const course = courseDetail[0];
+  const course = courseDetail;
 
   const features = [
     {
       icon: <Clock size={20} color="#2492EB" />,
       key: "Duration",
-      value: `${course?.course?.courseTimeLength} Month`,
+      value: `${courseDetail?.course_time_length} Month`,
     },
-    {
-      icon: <Book size={20} color="#2492EB" />,
-      key: "Lessons",
-      value: courseDetail?.length,
-    },
+    // {
+    //   icon: <Book size={20} color="#2492EB" />,
+    //   key: "Lessons",
+    //   value: courseDetail?.length,
+    // },
     {
       icon: <Users size={20} color="#2492EB" />,
       key: "Students",
-      value: course?.course?.maxStudentLength,
+      value: courseDetail?.max_student_length,
     },
     {
       icon: <Presentation size={20} color="#2492EB" />,
       key: "Skill Level",
-      value: course?.course?.skillLevel,
+      value: courseDetail?.skill_Level,
     },
     {
       icon: <Globe size={20} color="#2492EB" />,
       key: "Language",
-      value: course?.course?.language,
+      value: courseDetail?.language,
     },
   ];
 
@@ -62,7 +71,7 @@ const CourseDetail = () => {
       <MetaTag title="Courses Details" />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-7">
         <div className="lg:col-span-2">
-          <CourseDetailDescription data={courseDetail} />
+          <CourseDetailDescription data={courseDetail} courseData={courseData?.data?.[0] ? courseData?.data?.[0] : {}} />
         </div>
         <div className="w-full">
           <div className="shadow rounded-md p-4">

@@ -13,7 +13,7 @@ const RecordingCourse = () => {
     useEffect(() => {
         baseUrl
             .get(
-                `/course?status=video`
+                `/filter-courses?course_type=video`
             )
             .then((res) => {
                 setVideo(res.data?.data?.data);
@@ -47,7 +47,7 @@ const RecordingCourse = () => {
                             </p>
                         )}
                     </div>
-                   
+
                 </div>
             </div>
         </div>

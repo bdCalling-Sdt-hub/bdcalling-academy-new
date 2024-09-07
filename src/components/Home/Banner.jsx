@@ -20,6 +20,10 @@ const Banner = () => {
       thumb: "/images/bannerThumbnail.jpg",
     },
   ];
+  const result = catagories
+    ?.map(item => item?.category_name)
+    .map((name, index) => `${name}${index < catagories.length - 1 ? ' 🔹' : ''}`)
+    .join(' ');
   return (
     <>
       <div className={styles.homeBanner}>
@@ -116,8 +120,11 @@ const Banner = () => {
           Generation & Data Entry
         </ParallaxText> */}
         <ParallaxText baseVelocity={1}>
-          🔹Wordpress🔹Digital Marketing🔹Graphics Design🔹UX/UI Design🔹Lead
-          Generation & Data Entry
+          {
+            result
+          }
+          {/* 🔹Wordpress Digital Marketing🔹Graphics Design🔹UX/UI Design🔹Lead
+          Generation & Data Entry */}
         </ParallaxText>
       </div>
     </>

@@ -8,18 +8,15 @@ import Instructor from "./TabContent/Instructor";
 import Overview from "./TabContent/Overview";
 import Reviews from "./TabContent/Reviews";
 
-const CourseDetailDescription = ({ data }) => {
+const CourseDetailDescription = ({ data, courseData }) => {
   const [title, setTitle] = useState("Overview");
   const buttons = ["Overview", "Curriculum", "Reviews", "Instructor"];
   const router = useRouter();
-
-  const [course] = data;
-
   return (
     <div>
-      {course?.course?.courseThumbnail ? (
+      {data?.thumbnail ? (
         <img
-          src={`${imgUrl}/${course?.course?.courseThumbnail}`}
+          src={`${imgUrl}/${data?.thumbnail}`}
           alt="Course Image"
           className="w-full h-[450px] rounded mb-8"
         />
@@ -28,7 +25,7 @@ const CourseDetailDescription = ({ data }) => {
       )}
 
       <h2 className="capitalize text-3xl mt-4  font-bold">
-        {course?.course?.courseName}
+        {data?.course_name}
       </h2>
       <div className="bg-gray-100 p-4 rounded-md mt-8">
         <div className="flex flex-col lg:flex-row items-center gap-2">
@@ -37,9 +34,8 @@ const CourseDetailDescription = ({ data }) => {
               key={index}
               variant="link"
               onClick={() => setTitle(btnText)}
-              className={`${
-                title === btnText ? "bg-[#1796fd] text-white" : "bg-white"
-              }  rounded-md`}
+              className={`${title === btnText ? "bg-[#1796fd] text-white" : "bg-white"
+                }  rounded-md`}
             >
               {btnText}
             </Button>
@@ -49,8 +45,8 @@ const CourseDetailDescription = ({ data }) => {
 
       {title === "Overview" && <Overview data={data} />}
       {title === "Curriculum" && <Curriculum data={data} />}
-      {title === "Reviews" && <Reviews data={course} />}
-      {title === "Instructor" && <Instructor data={data} />}
+      {title === "Reviews" && <Reviews data={courseData?.course?.reviews || []} />}
+      {title === "Instructor" && <Instructor data={courseData?.teachers || []} />}
     </div>
   );
 };

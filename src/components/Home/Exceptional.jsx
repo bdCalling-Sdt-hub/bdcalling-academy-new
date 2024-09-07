@@ -2,18 +2,6 @@ import { ArrowUpRight, Check, Trophy } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../ui/button";
-import ParallaxText from "@/animation/FramerMotion/ParallaxText";
-import Image from "next/image";
-import img1 from "../../../public/images/Asset2.png"
-import img2 from "../../../public/images/Asset1.png"
-import img3 from "../../../public/images/Asset3.png"
-import img4 from "../../../public/images/Asset4.png"
-import img5 from "../../../public/images/Asset5.png"
-import img6 from "../../../public/images/Asset6.png"
-import img7 from "../../../public/images/Asset7.png"
-import img8 from "../../../public/images/Asset8.png"
-import img9 from "../../../public/images/Asset9.png"
-
 const Exceptional = () => {
   const [img, setImag] = useState();
   const items = [
@@ -92,29 +80,20 @@ const Exceptional = () => {
         </div>
         <img src={img} alt="" />
       </div>
-
-
-
-      <div className="py-5 bg-gradient-to-t from-[#167afd] to-[#17b4fd]">
-        
-
-        <div className="scroll-container">
-          <div className="scroll-content">
-            <Image src={img1} alt="Image 1" className="image" />
-            <Image src={img6} alt="Image 6" className="image" />
-            <Image src={img4} alt="Image 4" className="image" />
-            <Image src={img5} alt="Image 5" className="image" />
-            <Image src={img7} alt="Image 7" className="image" />
-            <Image src={img8} alt="Image 8" className="image" />
-            <Image src={img9} alt="Image 9" className="image" />
-            <Image src={img2} alt="Image 2" className="image" />
-            <Image src={img3} alt="Image 3" className="image" />
-          </div>
-        </div>
+      <div className="flex flex-wrap gap-2 justify-between items-center container mx-auto">
+        <button>
+          Working with
+        </button>
+        <button>
+          Members of
+        </button>
+        <button>
+          Our Concerns
+        </button>
       </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
 
-
-
+      </div>
     </div>
   );
 };

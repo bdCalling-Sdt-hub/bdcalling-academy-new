@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 
 const CourseCard = ({ course }) => {
   const {
-    courseThumbnail,
+    image,
     batch,
     startDate,
     id,
@@ -24,7 +24,7 @@ const CourseCard = ({ course }) => {
   const dayLeft = Math.abs(Math.floor(differentDate / (1000 * 60 * 60 * 24)));
 
   return (
-    <Link href={`/courses/${status}/${id}`}>
+    <Link href={`/courses/${course?.course?.course_name}/${id}`}>
       <div
         className={`rounded-lg hover:-translate-y-4 group ${styles.courseCard}`}
         style={{
@@ -32,7 +32,7 @@ const CourseCard = ({ course }) => {
         }}
       >
         <img
-          src={`${imgUrl}/${courseThumbnail}`}
+          src={`${imgUrl}/${image}`}
           alt="course image"
           className="rounded-t-lg w-full "
         />

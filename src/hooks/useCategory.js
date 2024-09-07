@@ -5,21 +5,11 @@ const useCategory = () => {
   const [category, setCategory] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
-  const deleteCategories = [
-    "app development",
-    "Web Development",
-    "ux/ui design",
-  ];
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await baseUrl.get("/category");
-        const filterCategory = response?.data?.data.filter(
-          (category) => !deleteCategories.includes(category.category_name)
-        );
-
+        const response = await baseUrl.get("/categories");
+        const filterCategory = response?.data?.data?.data?.map(item => ({ category_name: item.category_name, id: item?.id }))
         setCategory(filterCategory);
       } catch (err) {
         setError(err);
@@ -27,7 +17,6 @@ const useCategory = () => {
         setIsLoading(false);
       }
     };
-
     fetchData();
   }, []);
 

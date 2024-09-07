@@ -1,16 +1,25 @@
 import FlexItem from "@/components/Common/FlexItem";
 import { Youtube } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AccordionCard from "../Common/AccordionCard";
+import { baseUrl } from "@/config";
 
-const VideoContent = ({ data: modules }) => {
+const VideoContent = ({ data }) => {
   const [video, setVideo] = useState();
-
+  useEffect(() => {
+    baseUrl.get(`filter-courses?course_category_id=${data?.id}`)
+      .then((res) => {
+        console.log('res', res)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, [])
   return (
     <div>
       <div className="my-8">
         <h2 className="text-xl mb-5 font-bold">Course Content</h2>
-        {modules.map((module, index) => (
+        {[].map((module, index) => (
           <div key={index} className="mb-5">
             <AccordionCard title={module.module_title}>
               {module?.module_class?.map((video, index) => {

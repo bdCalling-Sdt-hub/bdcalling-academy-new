@@ -19,7 +19,6 @@ const HomePage = () => {
     loading: () => <h1>Loading...</h1>,
   });
   const { category } = useCategory();
-
   return (
     <div>
       <MetaTag title="Bdcalling Academy" />

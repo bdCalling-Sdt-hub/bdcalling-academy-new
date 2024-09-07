@@ -4,17 +4,19 @@ import { A11y, Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import testimonials from "../../../public/db/testimonial.json";
 import HeadingText from "../Common/headingText";
-
+import profileImage from "../../../public/images/profile.png";
 // Import Swiper styles
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
+import { baseUrl, imgUrl } from "@/config";
+import { FaStar } from "react-icons/fa";
 
 const Testimonial = () => {
   const { testimonialList } = testimonials;
   const [seeMore, setSeeMore] = useState(false);
   const [seeMoreId, setSeeMoreId] = useState();
-
+  const [reviews, setReviews] = useState([]);
   const batches = ['21st Batch', '22nd Batch', '23rd Batch', '24th Batch'];
   const courseTimes = ['3 month', '6 months',]
   const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
@@ -31,6 +33,12 @@ const Testimonial = () => {
     marginTop: "50px",
     padding: "0 10px",
   };
+  useEffect(() => {
+    baseUrl.get('/course-reviews').then((res) => {
+      setReviews(res?.data?.data)
+    })
+  }, [])
+  console.log(reviews)
 
   return (
     <div className="container">
@@ -52,10 +60,8 @@ const Testimonial = () => {
           pagination={{ clickable: true }}
           style={swiperContainerStyle}
         >
-          {testimonialList.map((testimonial, index) => (
-
+          {reviews?.slice(0, 10).map((testimonial, index) => (
             <SwiperSlide key={index} className="mt-16">
-
               <div
                 className="p-5 rounded-md relative flex justify-center h-auto text-center"
                 style={{
@@ -64,7 +70,7 @@ const Testimonial = () => {
               >
                 <div className="absolute -top-16 bg-white p-1 shadow rounded-full">
                   <Image
-                    src={testimonial?.image}
+                    src={testimonial?.user?.image ? `${imgUrl}/${testimonial?.user?.image}` : profileImage}
                     className="w-24 h-24 rounded-full"
                     alt=""
                     width={200}
@@ -72,28 +78,30 @@ const Testimonial = () => {
                   />
                 </div>
                 <div>
-                  <div className="my-6">
+                  <div className="my-3 mt-6">
                     <h2 className="text-xl">{testimonial?.name}</h2>
-                    <div className="flex justify-between items-center my-5">
-                      <p className=""><span className="font-semibold">Batch</span> : {testimonial?.batch}</p>
-                      <p className=""> <span className="font-semibold">Course duration</span> : {testimonial?.courseTime}</p>
+                    <div className="flex justify-between items-center my-3 w-full gap-4">
+                      <p className=""><span className="font-semibold">course</span> : {testimonial?.course?.course_name}</p>
+                      <p className="flex  justify-center items-center gap-1"> <span className="font-semibold">Rating</span> : {testimonial?.rating_value} <FaStar className="-mt-1 text-yellow-500" /></p>
                     </div>
                   </div>
                   <p>
                     {seeMore && testimonial.id === seeMoreId
-                      ? testimonial?.feedback
-                      : testimonial?.feedback.slice(0, 220)}{" "}
-                    <button
-                      className="text-blue-400"
-                      onClick={() => {
-                        setSeeMore(!seeMore);
-                        setSeeMoreId(testimonial.id);
-                      }}
-                    >
-                      {seeMore && testimonial.id === seeMoreId
-                        ? "See less"
-                        : "See More"}
-                    </button>
+                      ? testimonial?.message
+                      : testimonial?.message?.slice(0, 220)}{" "}
+                    {
+                      testimonial?.message?.length > 220 && <button
+                        className="text-blue-400"
+                        onClick={() => {
+                          setSeeMore(!seeMore);
+                          setSeeMoreId(testimonial.id);
+                        }}
+                      >
+                        {seeMore && testimonial.id === seeMoreId
+                          ? "See less"
+                          : "See More"}
+                      </button>
+                    }
                   </p>
                 </div>
               </div>
