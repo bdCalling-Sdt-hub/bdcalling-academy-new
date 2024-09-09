@@ -2,10 +2,12 @@ import { useState } from "react";
 import descriptions from "../../../public/db/successStories.json";
 import TopHeading from "../Common/TopHeading";
 import { Button } from "../ui/button";
-import Events from "./components/Events";
-import Gallery from "./components/Gallery";
+
 import StudentJourney from "./components/StudentJourney";
 import SuccessStories from "./components/SuccessStories";
+import StudentSuccess from "../Home/StudentSuccess";
+import Event from "../Home/Event";
+import Gallery from "../Home/Gallery";
 
 const Banner = () => {
   const [title, setTitle] = useState("Success stories");
@@ -22,12 +24,12 @@ const Banner = () => {
     title === "Success stories"
       ? successStories
       : title === "Events"
-      ? events
-      : title === "Student Journey"
-      ? studentJourney
-      : title === "Gallery"
-      ? ""
-      : "";
+        ? events
+        : title === "Student Journey"
+          ? studentJourney
+          : title === "Gallery"
+            ? ""
+            : "";
 
   return (
     <div>
@@ -38,18 +40,17 @@ const Banner = () => {
             key={index}
             variant="link"
             onClick={() => setTitle(category.title)}
-            className={`${
-              title === category.title ? "bg-[#1796fd] text-white" : ""
-            }  rounded-md`}
+            className={`${title === category.title ? "bg-[#1796fd] text-white" : ""
+              }  rounded-md`}
           >
             {category.title}
           </Button>
         ))}
       </div>
       <div>
-        {title === "Success stories" && <SuccessStories />}
-        {title === "Events" && <Events />}
-        {title === "Student Journey" && <StudentJourney />}
+        {title === "Success stories" && <StudentSuccess />}
+        {title === "Events" && <Event />}
+        {title === "Student Journey" && <StudentSuccess type={`journey`} />}
         {title === "Gallery" && <Gallery />}
       </div>
     </div>

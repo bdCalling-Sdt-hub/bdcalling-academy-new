@@ -118,7 +118,7 @@ const Footer = () => {
               </p>
             </div>
           </nav>
-          <nav className="lg:col-span-4 mt-3 hidden lg:block">
+          {/* <nav className="lg:col-span-4 mt-3 hidden lg:block">
             <img
               src="/images/sslcommerz.png"
               alt="ssl"
@@ -131,7 +131,7 @@ const Footer = () => {
               alt="ssl"
               className="rounded-lg"
             />
-          </nav>
+          </nav> */}
         </div>
       </div>
 

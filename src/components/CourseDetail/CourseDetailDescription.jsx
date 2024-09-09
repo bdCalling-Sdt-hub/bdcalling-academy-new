@@ -11,7 +11,6 @@ import Reviews from "./TabContent/Reviews";
 const CourseDetailDescription = ({ data, courseData }) => {
   const [title, setTitle] = useState("Overview");
   const buttons = ["Overview", "Curriculum", "Reviews", "Instructor"];
-  const router = useRouter();
   return (
     <div>
       {data?.thumbnail ? (
@@ -44,7 +43,7 @@ const CourseDetailDescription = ({ data, courseData }) => {
       </div>
 
       {title === "Overview" && <Overview data={data} />}
-      {title === "Curriculum" && <Curriculum data={data} />}
+      {title === "Curriculum" && <Curriculum data={courseData?.course} />}
       {title === "Reviews" && <Reviews data={courseData?.course?.reviews || []} />}
       {title === "Instructor" && <Instructor data={courseData?.teachers || []} />}
     </div>

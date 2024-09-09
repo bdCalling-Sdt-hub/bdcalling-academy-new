@@ -51,10 +51,10 @@ const Navbar = () => {
           title: "Online Courses",
           path: "/online",
         },
-        // {
-        //   title: "Video Courses",
-        //   path: "/video",
-        // },
+        {
+          title: "Video Courses",
+          path: "/video",
+        },
       ],
     },
     {
@@ -88,16 +88,14 @@ const Navbar = () => {
         </div>
 
         <ul
-          className={`space-y-5 lg:space-y-0 lg:flex gap-10  items-center bg-[#e6f8ff] lg:bg-transparent p-4 lg:p-0  absolute lg:static  h-auto ${
-            open ? "left-0 top-14 w-full" : "left-0 -top-96"
-          }`}
+          className={`space-y-5 lg:space-y-0 lg:flex gap-10  items-center bg-[#e6f8ff] lg:bg-transparent p-4 lg:p-0  absolute lg:static  h-auto ${open ? "left-0 top-14 w-full" : "left-0 -top-96"
+            }`}
         >
           {items.map((item, index) => (
             <li key={index}>
               <Link
-                className={`${
-                  item.path === path ? "text-primary font-bold" : "text-black"
-                } text-[17px] hover:text-primary duration-200`}
+                className={`${item.path === path ? "text-primary font-bold" : "text-black"
+                  } text-[17px] hover:text-primary duration-200`}
                 href={item.path}
               >
                 {item.title !== "Courses" ? (

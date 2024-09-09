@@ -13,7 +13,7 @@ const imageUrl = imgCloud
 
 export const baseUrl = axios.create({
   baseURL: url,
-  timeout: 10000,
+  // timeout: 10000,
   headers: { "X-Custom-Header": "foobar" },
 });
 

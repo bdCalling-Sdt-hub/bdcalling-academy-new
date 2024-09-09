@@ -8,7 +8,7 @@ const CourseCard = ({ course }) => {
   const {
     image,
     batch,
-    startDate,
+    start_date,
     id,
     status,
     price,
@@ -19,10 +19,9 @@ const CourseCard = ({ course }) => {
 
   //remain day calculate here
   const today = new Date();
-  const courseStartDate = new Date(startDate);
+  const courseStartDate = new Date(start_date);
   const differentDate = today - courseStartDate;
   const dayLeft = Math.abs(Math.floor(differentDate / (1000 * 60 * 60 * 24)));
-
   return (
     <Link href={`/courses/${course?.course?.course_name}/${id}`}>
       <div
@@ -44,7 +43,7 @@ const CourseCard = ({ course }) => {
               Batch {batch}
             </p>
             <div className="bg-gradient-to-tr from-[#80b3dd] to-[#0779d6] text-white rounded-md py-1 px-5">
-              {status}
+              {course?.course?.course_type}
             </div>
           </div>
           <div className="flex items-center justify-between mt-4 border-b pb-2">

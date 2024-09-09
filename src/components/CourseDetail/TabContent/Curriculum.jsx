@@ -4,7 +4,7 @@ import VideoContent from "../VideoContent";
 
 const Curriculum = ({ data }) => {
   const { solutions, certificate } = curriculum;
-  console.log('data', data)
+
   return (
     <div className="mt-5">
       <div>
@@ -12,12 +12,21 @@ const Curriculum = ({ data }) => {
           What you will learn by doing the course
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 border border-[#2492EB] rounded-md my-8 p-5">
-          {data?.curriculum.map((item, index) => (
-            <div className="flex items-center gap-2" key={index}>
-              <p>
-                <Check size={20} color="#2492EB" />
-              </p>
-              <p>{item}</p>
+          {data?.course_module.map((item, index) => (
+            <div key={index}>
+              <div className="flex items-center gap-2">
+                <p>
+                  <Check size={20} color="#2492EB" />
+                </p>
+                <p>{item?.module_title}</p>
+              </div>
+              <ul className="ml-12">
+                {
+                  item?.videos?.map(vid => {
+                    return <li className="list-disc">{vid?.name}</li>
+                  })
+                }
+              </ul>
             </div>
           ))}
         </div>

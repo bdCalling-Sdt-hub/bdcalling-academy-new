@@ -7,12 +7,12 @@ import {
 import useCategory from "@/hooks/useCategory";
 import { ChevronDown } from "lucide-react";
 
-const SearchCourse = ({ setTitle }) => {
+const SearchCourse = ({ setTitle, setSearch }) => {
   const { category: catagories } = useCategory();
 
   return (
     <div className="border rounded-full h-14 flex items-center  gap-2 px-2 mt-10">
-      <input
+      <input onChange={(e) => setSearch(e.target.value)}
         type="text"
         placeholder="Select course to auto search..."
         className="h-full w-[50%] lg:w-[88%] bg-transparent outline-none pl-4"

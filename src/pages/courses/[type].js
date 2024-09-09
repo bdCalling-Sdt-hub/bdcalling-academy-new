@@ -13,24 +13,24 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const CoursesPage = () => {
-  const [courseLoad, setCourseLoad] = useState(6);
+  const [courseLoad, setCourseLoad] = useState(8);
   const router = useRouter();
   const [courses, setCourses] = useState([]);
   const status = router.query.type;
   const [error, setError] = useState("");
   const { category: catagories } = useCategory();
-  const [selectCategory, setSelectCategory] = useState(0);
-  const [title, setTitle] = useState(0);
+  const [selectCategory, setSelectCategory] = useState(null);
+  const [title, setTitle] = useState(null);
   const [loading, setLoading] = useState(false);
-
+  const [search, setSearch] = useState(null)
   useEffect(() => {
     setLoading(true);
     baseUrl
       .get(
-        `/course?status=${status}&category=${title | selectCategory
-        }&per_page=${courseLoad}`
+        `/filter-courses?per_page=${courseLoad}&course_type=${status} ${selectCategory ? `&course_category_id=${selectCategory}` : ''}${search ? `&course_name=${search}` : ''}`
       )
       .then((res) => {
+        console.log(res)
         setCourses(res.data?.data?.data);
         setLoading(false);
       })
@@ -41,12 +41,6 @@ const CoursesPage = () => {
       });
   }, [status, title, selectCategory, courseLoad]);
 
-
-
-
-
-  const coursesFilter = ["Online Courses", "Offline Courses", "Video Courses"];
-  
   return (
     <div className="container">
       <MetaTag title="Courses" />
@@ -58,7 +52,7 @@ const CoursesPage = () => {
           development topics. Delve into the intricacies of coding, master the
           art of photography, or unlock the secrets of effective communication.
         </p>
-        <SearchCourse setTitle={setTitle} />
+        <SearchCourse setTitle={setSelectCategory}  setSearch={setSearch}/>
       </div>
       <div className="space-y-4">
         <AccordionCard title="Course Categories">

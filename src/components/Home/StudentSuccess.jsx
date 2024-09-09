@@ -12,8 +12,9 @@ import { AspectRatio } from "../ui/aspect-ratio";
 import "swiper/css";
 import "swiper/css/pagination";
 import { baseUrl, imgUrl } from "@/config";
+import { usePathname } from "next/navigation";
 
-const StudentSuccess = () => {
+const StudentSuccess = ({ type }) => {
   const [videoLink, setVideoLink] = useState("");
   const [StoryData, setStoryData] = useState([])
   const swiperContainerStyle = {
@@ -23,16 +24,19 @@ const StudentSuccess = () => {
     paddingBottom: "50px",
   };
   useEffect(() => {
-    baseUrl.get('/success/story?type=story').then((res) => {
+    baseUrl.get(`/success/story?type=${type || 'story'}`).then((res) => {
       Array.isArray(res?.data?.data) ? setStoryData(res?.data?.data) : setStoryData([])
     }).catch((err) => {
       console.log(err)
     })
   }, [])
   console.log(`${imgUrl}/${StoryData?.[0]?.file}`)
+  const pathname = usePathname()
   return (
     <div className="container my-24">
-      <HeadingText title={"Success Story"} />
+      {
+        pathname != '/success-stories' && <HeadingText title={"Success Story"} />
+      }
       <Dialog>
         <Swiper
           modules={[Pagination, Autoplay]}

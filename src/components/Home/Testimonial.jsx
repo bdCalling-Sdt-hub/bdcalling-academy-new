@@ -21,7 +21,6 @@ const Testimonial = () => {
   const courseTimes = ['3 month', '6 months',]
   const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
   console.log(getRandomElement(courseTimes))
-
   const formattedTestimonials = testimonialList?.map(testimonials => ({
     ...testimonials,
     batch: getRandomElement(batches),
