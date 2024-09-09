@@ -31,7 +31,7 @@ const Courses = ({ categories }) => {
         <div>
           <h2 className="text-2xl font-bold">Popular Courses</h2>
         </div>
-        <Link href="/courses">
+        <Link href="/courses/offline">
           <Button className="bg-[#1796fd]">
             View Courses <ChevronRight color="#e8e3e3" size={15} />
           </Button>
