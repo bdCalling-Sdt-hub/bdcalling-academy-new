@@ -28,7 +28,7 @@ const RecordingCourse = () => {
     return (
         <div className='container'>
             {/* <MetaTag title="Course" /> */}
-            <p className='text-2xl font-bold'>Recording Course</p>
+            <p className='text-2xl font-extrabold my-4'>Recording Course</p>
 
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 my-12">

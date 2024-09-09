@@ -57,7 +57,6 @@ const Exceptional = () => {
     "Lifetime access",
   ];
 
-  const basePath = '../../../assest/assosiate'
   const associateData = {
     working: [bteb, ict, iitu, edge, nsda, dhaka_university, crown_institute, eastern_university,
       jagannath_university, dhaka_college, united_international_university, metropolitan_university,
@@ -153,6 +152,9 @@ const Exceptional = () => {
         <button onClick={() => setTab('member')} className={`rounded-md ${tab === 'member' ? 'bg-blue-600 font-semibold  p-2 px-6 text-white' : 'hover:bg-blue-600 font-semibold transition-all p-2 px-6 bg-blue-300'}`}>
           Our Concerns
         </button>
+        <div className="w-full bg-gray-200 shadow-inner h-2 mt-2 rounded-md">
+
+        </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 container mx-auto my-14 justify-center items-center gap-3">
         {

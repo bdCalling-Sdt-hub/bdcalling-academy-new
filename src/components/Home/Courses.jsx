@@ -29,7 +29,7 @@ const Courses = ({ categories }) => {
     <div className="container ">
       <div className="flex justify-between mt-24">
         <div>
-          <h2 className="text-2xl font-bold">Popular Courses</h2>
+          <h2 className="text-2xl font-extrabold">Popular Courses</h2>
         </div>
         <Link href="/courses/offline">
           <Button className="bg-[#1796fd]">
@@ -42,7 +42,7 @@ const Courses = ({ categories }) => {
           variant="link"
           onClick={() => setTitle(0)}
           className={`${title === 0 ? "bg-[#1796fd] text-white" : ""
-            } text-md font-medium`}
+            } text-md font-semibold shadow-md`}
         >
           All
         </Button>
@@ -52,8 +52,8 @@ const Courses = ({ categories }) => {
             key={index}
             variant="link"
             onClick={() => setTitle(category.id)}
-            className={`${title === category.id ? "bg-[#1796fd] text-white" : ""
-              }  text-md font-medium`}
+            className={`${title === category.id ? "bg-[#1796fd] text-white" : "bg-gray-100"
+              }  text-md font-semibold shadow-md`}
           >
             <span className="capitalize">{category.category_name}</span>
           </Button>

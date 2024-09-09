@@ -18,7 +18,7 @@ const Event = () => {
   }, []);
   const pathname = usePathname()
   return (
-    <div className="my-12 container">
+    <div className="my-20 container">
       {
         pathname == '/success-stories' ? <>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-10">
@@ -57,7 +57,7 @@ const Event = () => {
         </> :
           <>
             <HeadingText title={"Upcoming Events"} />
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-10">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-14">
               {events.length > 0 && (
                 <div
                   className="col-span-2 rounded-lg"
