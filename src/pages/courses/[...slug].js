@@ -102,6 +102,9 @@ const CourseDetail = () => {
 
               <Button
                 onClick={() => {
+                  if (!localStorage.getItem("token")) {
+                    router.push("/login");
+                  }
                   const data = {
                     course_id: courseData?.data?.[0]?.course?.id,
                     price: courseData?.data?.[0]?.course?.price,
@@ -139,9 +142,6 @@ const CourseDetail = () => {
                       confirmButtonColor: "#1796fd",
                     }))
                 }
-                  // router.push(
-                  //   `/payment/${course?.course?.id}/${course?.course?.courseName}/${course?.course?.price}/${course?.course?.discount_price}/${course?.course?.startDate}`
-                  // )
                 }
                 className="  bg-white text-primary"
               >
