@@ -14,7 +14,7 @@ const VideoContent = ({ data }) => {
       .catch((err) => {
         console.log(err)
       })
-  }, [])
+  }, [data?.id])
   return (
     <div>
       <div className="my-8">

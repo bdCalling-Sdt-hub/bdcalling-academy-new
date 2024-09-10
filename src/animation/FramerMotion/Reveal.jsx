@@ -10,7 +10,7 @@ const Reveal = ({ children }) => {
     if (isInView) {
       mainControls.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, mainControls]);
   return (
     <div ref={ref} className="relative overflow-hiddenhidden">
       <motion.div

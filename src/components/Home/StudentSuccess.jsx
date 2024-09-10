@@ -29,7 +29,7 @@ const StudentSuccess = ({ type }) => {
     }).catch((err) => {
       console.log(err)
     })
-  }, [])
+  }, [type])
   console.log(`${imgUrl}/${StoryData?.[0]?.file}`)
   const pathname = usePathname()
   return (

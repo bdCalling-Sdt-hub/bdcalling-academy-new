@@ -34,7 +34,7 @@ const Gallery = () => {
             {
               galleryData?.map(item => {
                 return <div key={item?.id}>
-                  <img className='w-full h-[400px] object-cover' src={`${imgUrl}/${item?.image}`} />
+                  <img className='w-full h-[400px] object-cover' src={`${imgUrl}/${item?.image}`} alt='' />
                 </div>
               })
             }
@@ -60,7 +60,7 @@ const Gallery = () => {
             {
               galleryData?.map(item => {
                 return <SwiperSlide key={item?.id}>
-                  <img className='w-full h-[400px] object-cover' src={`${imgUrl}/${item?.image}`} />
+                  <img className='w-full h-[400px] object-cover' src={`${imgUrl}/${item?.image}`} alt='' />
                 </SwiperSlide>
               })
             }

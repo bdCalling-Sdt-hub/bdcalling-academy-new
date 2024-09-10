@@ -39,7 +39,7 @@ const CoursesPage = () => {
         setCourses([]);
         setLoading(false);
       });
-  }, [status, title, selectCategory, courseLoad]);
+  }, [status, title, selectCategory, courseLoad, search]);
 
   return (
     <div className="container">
@@ -52,7 +52,7 @@ const CoursesPage = () => {
           development topics. Delve into the intricacies of coding, master the
           art of photography, or unlock the secrets of effective communication.
         </p>
-        <SearchCourse setTitle={setSelectCategory}  setSearch={setSearch}/>
+        <SearchCourse setTitle={setSelectCategory} setSearch={setSearch} />
       </div>
       <div className="space-y-4">
         <AccordionCard title="Course Categories">

@@ -160,7 +160,7 @@ const Exceptional = () => {
         {
           associateData[tab]?.map((item, index) => {
             // console.log(`${basePath}/${tab}/${item}`)
-            return <div className="flex justify-center items-center">
+            return <div key={index} className="flex justify-center items-center">
               <Image key={index} src={item} alt={item} width={100} height={100} />
             </div>
           })

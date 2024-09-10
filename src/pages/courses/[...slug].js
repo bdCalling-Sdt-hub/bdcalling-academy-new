@@ -16,21 +16,18 @@ const CourseDetail = () => {
   const params = router.query.slug;
   const [courseDetail, setCourseDetail] = useState({});
   const [courseData, setCourseData] = useState({})
-  console.log('courseData', courseData)
-  let id;
-  let name
+
   useEffect(() => {
     if (Array.isArray(params) && params.length >= 2) {
-      id = params[1];
-      name = params[0];
+      console.log(params)
       baseUrl
-        .get(`/courses/${id}`)
+        .get(`/courses/${params[1]}`)
         .then((res) => {
           setCourseDetail(res?.data?.data);
         })
         .catch((err) => console.log(err));
       baseUrl
-        .get(`/filter-courses?course_name=${name}`)
+        .get(`/filter-courses?course_name=${params[0]}`)
         .then((res) => {
           setCourseData(res?.data?.data);
           // console.log(res)
