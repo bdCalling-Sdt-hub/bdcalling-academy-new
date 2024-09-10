@@ -1,19 +1,22 @@
 import FlexItem from "@/components/Common/FlexItem";
 import CourseDetailDescription from "@/components/CourseDetail/CourseDetailDescription";
 import { Button } from "@/components/ui/button";
+import { toast } from "@/components/ui/use-toast";
 import { baseUrl } from "@/config";
 import RootLayout from "@/Layouts/RootLayout";
 import MetaTag from "@/shared/MetaTag";
-import { Book, Clock, Globe, Presentation, Users } from "lucide-react";
+import { Clock, Globe, Presentation, Users } from "lucide-react";
+import { redirect } from "next/navigation";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 const CourseDetail = () => {
   const router = useRouter();
   const params = router.query.slug;
   const [courseDetail, setCourseDetail] = useState({});
   const [courseData, setCourseData] = useState({})
-  console.log('courseData', courseData?.data?.[0]?.course?.reviews)
+  console.log('courseData', courseData)
   let id;
   let name
   useEffect(() => {
@@ -52,7 +55,7 @@ const CourseDetail = () => {
     {
       icon: <Users size={20} color="#2492EB" />,
       key: "Students",
-      value: courseDetail?.max_student_length,
+      value: courseDetail?.max_student_length || 50,
     },
     {
       icon: <Presentation size={20} color="#2492EB" />,
@@ -91,17 +94,54 @@ const CourseDetail = () => {
             ))}
             <div className="bg-primary text-center rounded-md py-6 mt-14">
               <h2 className="text-xl text-gray-200 font-semibold">
-                Course Fee {course?.course?.status}
+                Course Fee
               </h2>
               <h2 className="text-2xl font-bold text-white my-2">
-                BDT {course?.course?.discount_price}
+                BDT {courseDetail.price}
               </h2>
 
               <Button
-                onClick={() =>
-                  router.push(
-                    `/payment/${course?.course?.id}/${course?.course?.courseName}/${course?.course?.price}/${course?.course?.discount_price}/${course?.course?.startDate}`
-                  )
+                onClick={() => {
+                  const data = {
+                    course_id: courseData?.data?.[0]?.course?.id,
+                    price: courseData?.data?.[0]?.course?.price,
+                    gateway_name: 'sslcommerze',
+                    batch_id: courseData?.data?.[0]?.id
+                  }
+                  const formData = new FormData()
+                  Object.keys(data).forEach(key => formData.append(key, data[key]))
+                  baseUrl
+                    .post('/pay', formData, {
+                      headers: {
+                        "X-Custom-Header": "foobar",
+                        Authorization: `Bearer ${localStorage.getItem("token")}`,
+                      },
+                    })
+                    .then((res) => {
+                      if (res?.status === 200) {
+                        if (res?.data?.data) {
+                          console.log(res?.data?.data)
+                          router.push(res?.data?.data)
+                        } else {
+                          Swal.fire({
+                            title: "Error",
+                            text: res?.data?.message || "Something went wrong",
+                            icon: "error",
+                            confirmButtonColor: "#1796fd",
+                          })
+                        }
+                      }
+                    })
+                    .catch((err) => Swal.fire({
+                      title: "Error",
+                      text: err?.data?.message || "Something went wrong",
+                      icon: "error",
+                      confirmButtonColor: "#1796fd",
+                    }))
+                }
+                  // router.push(
+                  //   `/payment/${course?.course?.id}/${course?.course?.courseName}/${course?.course?.price}/${course?.course?.discount_price}/${course?.course?.startDate}`
+                  // )
                 }
                 className="  bg-white text-primary"
               >

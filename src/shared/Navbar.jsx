@@ -7,7 +7,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { imgUrl } from "@/config";
+import { baseUrl, imgUrl } from "@/config";
 import { motion } from "framer-motion";
 import { AlignRight, ChevronDown, LogOut, X } from "lucide-react";
 import { signOut, useSession } from "next-auth/react";
@@ -15,7 +15,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -25,7 +25,19 @@ const Navbar = () => {
   const router = useRouter();
   const path = usePathname();
   const { data: session } = useSession();
-
+  const [useData, setUserData] = useState(null)
+  useEffect(() => {
+    baseUrl.get('/profile', {
+      headers: {
+        "X-Custom-Header": "foobar",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }).then((res) => {
+      setUserData(res?.data?.user)
+    }).catch((e) => {
+      setUserData(null)
+    })
+  })
   const logout = () => {
     signOut();
   };
@@ -67,8 +79,8 @@ const Navbar = () => {
     },
   ];
 
-  const srcUrl = session?.user?.image
-    ? `${imgUrl}/${session?.user?.image}`
+  const srcUrl = useData?.image
+    ? `${imgUrl}/${useData?.image}`
     : "/images/profile.png";
 
   return (
@@ -120,7 +132,7 @@ const Navbar = () => {
             </li>
           ))}
 
-          {session?.user?.email ? (
+          {useData?.email ? (
             <DropdownMenu>
               <DropdownMenuTrigger>
                 <div className="bg-white rounded-full w-11 h-11 flex items-center justify-center">
@@ -133,7 +145,7 @@ const Navbar = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="text-center">
                 <DropdownMenuLabel className="text-sm">
-                  {session?.user?.name}
+                  {useData?.name}
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem

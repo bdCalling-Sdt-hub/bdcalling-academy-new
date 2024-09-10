@@ -20,14 +20,16 @@ const FormSection = ({ categories }) => {
   } = useForm();
 
   const onSubmit = (data) => {
+
     setLoading(true);
     baseUrl
       .post("/contacts", data)
       .then((res) => {
-        if (res.data?.data) {
+
+        if (res?.status===201) {
           Swal.fire({
             title: "Good Job!",
-            text: res.data?.data,
+            text: res.data?.message,
             icon: "success",
             confirmButtonColor: "#1796fd",
           });
@@ -132,9 +134,9 @@ const FormSection = ({ categories }) => {
 
           <Input
             type="text"
-            name="category"
-            {...register("category", { required: true })}
-            placeholder="Subject"
+            name="course_name"
+            {...register("course_name", { required: true })}
+            placeholder="course name"
           />
           <p>
             {errors.category && (

@@ -21,9 +21,10 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+
     try {
       setLoading(true);
-      const value = { ...data, userType: "STUDENT", signAs: "website" };
+      const value = { ...data, role: "STUDENT" };
 
       const res = await baseUrl.post("/register", value);
 
@@ -65,7 +66,7 @@ const Register = () => {
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
-              <div className="mb-4">
+              {/* <div className="mb-4">
                 <Input
                   type="text"
                   placeholder="Full Name"
@@ -75,16 +76,16 @@ const Register = () => {
                 {errors.fullName && (
                   <span className="text-red-500">Name is required</span>
                 )}
-              </div>
+              </div> */}
               <div className="mb-4">
                 <Input
                   type="text"
                   placeholder="User Name"
-                  name="userName"
-                  {...register("userName", { required: true })}
+                  name="name"
+                  {...register("name", { required: true })}
                 />
                 {errors.userName && (
-                  <span className="text-red-500">Username is required</span>
+                  <span className="text-red-500">name is required</span>
                 )}
               </div>
             </div>
@@ -101,10 +102,10 @@ const Register = () => {
             </div>
             <div className="mb-4">
               <Input
-                type="number"
+                type="phone_number"
                 placeholder="Phone number"
                 name="mobileNumber"
-                {...register("mobileNumber", { required: true })}
+                {...register("phone_number", { required: true })}
               />
               {errors.mobileNumber && (
                 <span className="text-red-500">Phone number is required</span>

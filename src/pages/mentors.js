@@ -20,8 +20,8 @@ const Mentors = () => {
 
   useEffect(() => {
     baseUrl
-      .get("/mentors/all")
-      .then((res) => setExpertList(res.data?.data))
+      .get("/teachers")
+      .then((res) => setExpertList(res.data?.teacher?.data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -42,9 +42,8 @@ const Mentors = () => {
             onClick={() => {
               setTitle(category);
             }}
-            className={`${
-              title === category ? "bg-[#1796fd] text-white" : ""
-            }  rounded-md`}
+            className={`${title === category ? "bg-[#1796fd] text-white" : ""
+              }  rounded-md`}
           >
             {category}
           </Button>
