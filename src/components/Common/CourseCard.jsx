@@ -7,7 +7,7 @@ import { Button } from "../ui/button";
 const CourseCard = ({ course }) => {
   const {
     image,
-    batch,
+    batch_name,
     start_date,
     id,
     status,
@@ -16,14 +16,14 @@ const CourseCard = ({ course }) => {
     courseName,
     discount_price,
   } = course;
-
+  console.log('course', course)
   //remain day calculate here
   const today = new Date();
   const courseStartDate = new Date(start_date);
   const differentDate = today - courseStartDate;
   const dayLeft = Math.abs(Math.floor(differentDate / (1000 * 60 * 60 * 24)));
   return (
-    <Link href={`/courses/${course?.course?.course_name}/${id}`}>
+    <Link href={`/courses/${course?.course?.course_name}/${course?.course?.id}`}>
       <div
         className={`rounded-lg hover:-translate-y-4 group ${styles.courseCard}`}
         style={{
@@ -40,7 +40,7 @@ const CourseCard = ({ course }) => {
             <p className="flex items-center gap-1 text-sm">
               {" "}
               <BookOpenText size={16} color="#1796fd" />
-              Batch {batch}
+              Batch {batch_name}
             </p>
             <div className="bg-gradient-to-tr from-[#80b3dd] to-[#0779d6] text-white rounded-md py-1 px-5">
               {course?.course?.course_type}
@@ -56,11 +56,11 @@ const CourseCard = ({ course }) => {
               {dayLeft} Days Left
             </p>
           </div>
-          <h2 className="my-3 text-xl h-12 capitalize">{courseName}</h2>
+          <h2 className="my-3 text-xl h-12 capitalize">{course?.course?.course_name}</h2>
           <div className=" space-y-2">
             <div className="lg:flex gap-4 items-center">
               <h2 className="text-lg font-bold">{discount_price}BDT</h2>
-              <p className="line-through">BDT{price}</p>
+              <p className="line-through">BDT{course?.course?.price}</p>
             </div>
             <div className="flex items-center gap-1 ">
               <div className="flex mb-4">

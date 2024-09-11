@@ -24,6 +24,9 @@ const CoursesPage = () => {
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState(null)
   useEffect(() => {
+    if (!status) {
+      return
+    }
     setLoading(true);
     baseUrl
       .get(
