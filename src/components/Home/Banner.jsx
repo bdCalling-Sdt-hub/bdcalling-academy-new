@@ -22,7 +22,7 @@ const Banner = () => {
   ];
   const result = catagories
     ?.map(item => item?.category_name)
-    .map((name, index) => `${name}${index < catagories.length - 1 ? ' 🔹' : ''}`)
+    .map((name, index) => `${name}${index < catagories.length ? ' 🔹' : ''}`)
     .join(' ');
   return (
     <>

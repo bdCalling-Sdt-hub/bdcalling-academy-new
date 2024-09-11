@@ -11,9 +11,10 @@ const Courses = ({ categories }) => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
+    const timestamp = new Date().getTime();
     setLoading(true);
     baseUrl
-      .get(`/filter-courses?course_category_id=${title || ''}`)
+      .get(`/filter-courses?course_category_id=${title || ''}&_=${timestamp}`)
       .then((res) => {
         if (res.data) {
           setCourses(res.data?.data?.data);
