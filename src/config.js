@@ -12,5 +12,5 @@ export const baseUrl = axios.create({
   // timeout: 10000,
   headers: { "X-Custom-Header": "foobar" },
 });
-
+6
 export const imgUrl = imageUrl;

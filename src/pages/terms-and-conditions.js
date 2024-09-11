@@ -1,10 +1,17 @@
 import RootLayout from "@/Layouts/RootLayout";
 import termsData from "../../public/db/terms.json";
+import { useEffect, useState } from "react";
 
 const TermAndConditionPage = () => {
+  const [terms, setTerms] = useState(null);
+  useEffect(() => {
+    baseUrl.get('/show/terms').then((res) => {
+      setTerms(res?.data?.data?.terms)
+    }).catch((err) => console.log(err))
+  }, [])
   return (
-    <div className="h-auto container py-8 ">
-      <div className="lg:mx-28">
+    <div className="h-auto container py-8 " dangerouslySetInnerHTML={{ __html: terms }}>
+      {/* <div className="lg:mx-28">
         <h2 className="text-3xl font-medium  text-gray-500">শর্তাবলি</h2>
         <div>
           {termsData.map((data, index) => (
@@ -22,7 +29,7 @@ const TermAndConditionPage = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

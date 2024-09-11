@@ -1,10 +1,17 @@
 import RootLayout from "@/Layouts/RootLayout";
 import policyData from "../../public/db/privacyPolicy.json";
+import { useEffect, useState } from "react";
 
 const PrivacyPolicyPage = () => {
+  const [privacy, setPrivacy] = useState(null);
+  useEffect(() => {
+    baseUrl.get('/show/privacy').then((res) => {
+      setPrivacy(res?.data?.data?.privacy)
+    }).catch((err) => console.log(err))
+  }, [])
   return (
-    <div className="h-auto container py-8 ">
-      <div className="lg:mx-28">
+    <div className="h-auto container py-8 " dangerouslySetInnerHTML={{ __html: privacy }}>
+      {/* <div className="lg:mx-28">
         <h2 className="text-2xl font-bold text-gray-500">প্রাইভেসি পলিসি</h2>
         <div>
           {policyData.map((data, index) => (
@@ -22,7 +29,7 @@ const PrivacyPolicyPage = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

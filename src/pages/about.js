@@ -5,13 +5,21 @@ import OurVision from "@/components/About/OurVision";
 import TotalCourse from "@/components/About/TotalCourse";
 import WhatBdCalling from "@/components/About/WhatBdCalling";
 import Subscribe from "@/components/Common/Subscribe";
+import { baseUrl } from "@/config";
 import RootLayout from "@/Layouts/RootLayout";
 import MetaTag from "@/shared/MetaTag";
+import { useEffect, useState } from "react";
 
 const AboutPage = () => {
+  const [about, setAbout] = useState(null);
+  useEffect(() => {
+    baseUrl.get('/show/about').then((res) => {
+      setAbout(res?.data?.data?.about)
+    }).catch((err) => console.log(err))
+  }, [])
   return (
-    <div className="container">
-      <MetaTag title="About" />
+    <div className="container" dangerouslySetInnerHTML={{ __html: about }}>
+      {/* <MetaTag title="About" />
       <Reveal>
         <About />
       </Reveal>
@@ -28,7 +36,7 @@ const AboutPage = () => {
           title="Say Hello to Learn with!"
           description="Unlock a world of knowledge and endless growth opportunities"
         />
-      </Reveal>
+      </Reveal> */}
     </div>
   );
 };
