@@ -3,50 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
-import bteb from '../../assest/assosiate/working/1_bteb.png';
-import ict from '../../assest/assosiate/working/2_ict.png';
-import iitu from '../../assest/assosiate/working/3_iitu.png';
-import edge from '../../assest/assosiate/working/4_edge.png';
-import nsda from '../../assest/assosiate/working/5_nsda.png';
-import dhaka_university from '../../assest/assosiate/working/6_dhaka_university.jpg';
-import crown_institute from '../../assest/assosiate/working/7_crown_institute_of_business_and_technology.jpg';
-import eastern_university from '../../assest/assosiate/working/8_eastern_eniversity.png';
-import jagannath_university from '../../assest/assosiate/working/9_jagannath_university.png';
-import dhaka_college from '../../assest/assosiate/working/10_dhaka_college.png';
-import united_international_university from '../../assest/assosiate/working/11_united_international_university.png';
-import metropolitan_university from '../../assest/assosiate/working/12_metropolitan_university.png';
-import north_south_university from '../../assest/assosiate/working/13_north_south_university.png';
-import east_west_university from '../../assest/assosiate/working/14_east_west_university.png';
-import smuct from '../../assest/assosiate/working/15_smuct.png';
-import bracu from '../../assest/assosiate/working/16_bracu.png';
-import polytechnic_17 from '../../assest/assosiate/working/17_polytechnic.png';
-import polytechnic_18 from '../../assest/assosiate/working/18_polytechnic.png';
-import polytechnic_19 from '../../assest/assosiate/working/19_polytechnic.jpg';
-import polytechnic_20 from '../../assest/assosiate/working/20_polytechnic.jpg';
-import polytechnic_21 from '../../assest/assosiate/working/21_polytechnic.png';
-import polytechnic_22 from '../../assest/assosiate/working/22_polytechnic.jpg';
-import polytechnic_23 from '../../assest/assosiate/working/23_polytechnic.png';
-import polytechnic_24 from '../../assest/assosiate/working/24_polytechnic.png';
-import polytechnic_25 from '../../assest/assosiate/working/25_polytechnic.png';
-import polytechnic_26 from '../../assest/assosiate/working/26_polytechnic.png';
-import polytechnic_27 from '../../assest/assosiate/working/27_polytechnic.jpg';
-import polytechnic_28 from '../../assest/assosiate/working/28_polytechnic.png';
-import polytechnic_29 from '../../assest/assosiate/working/29_polytechnic.png';
-import polytechnic_30 from '../../assest/assosiate/working/30_polytechnic.png';
-import polytechnic_31 from '../../assest/assosiate/working/31_polytechnic.jpg';
-import polytechnic_32 from '../../assest/assosiate/working/32_polytechnic.png';
-import polytechnic_33 from '../../assest/assosiate/working/33_polytechnic.jpg';
-import polytechnic_34 from '../../assest/assosiate/working/34_polytechnic.png';
-import polytechnic_35 from '../../assest/assosiate/working/35_polytechnic.jpg';
-import polytechnic_36 from '../../assest/assosiate/working/36_polytechnic.jpg';
-import polytechnic_37 from '../../assest/assosiate/working/37_polytechnic.png';
-import polytechnic_38 from '../../assest/assosiate/working/38_polytechnic.png';
-import softvence from '../../assest/assosiate/concerns/1_softvence.png';
-import sm_technology from '../../assest/assosiate/concerns/2_sm_technology.png';
-import backbencher_studio from '../../assest/assosiate/concerns/3_backbencher_studio.png';
-import sparktech from '../../assest/assosiate/concerns/4_sparktech.png';
-import scaleup from '../../assest/assosiate/concerns/5_scaleup.png';
-import basis from '../../assest/assosiate/member/1_basis.png';
+import associateData from "../../../public/db/assosiate.json";
 const Exceptional = () => {
   const [img, setImag] = useState();
   const [tab, setTab] = useState('working');
@@ -57,22 +14,6 @@ const Exceptional = () => {
     "Lifetime access",
   ];
 
-  const associateData = {
-    working: [bteb, ict, iitu, edge, nsda, dhaka_university, crown_institute, eastern_university,
-      jagannath_university, dhaka_college, united_international_university, metropolitan_university,
-      north_south_university, east_west_university, smuct, bracu, polytechnic_17, polytechnic_18,
-      polytechnic_19, polytechnic_20, polytechnic_21, polytechnic_22, polytechnic_23, polytechnic_24,
-      polytechnic_25, polytechnic_26, polytechnic_27, polytechnic_28, polytechnic_29, polytechnic_30,
-      polytechnic_31, polytechnic_32, polytechnic_33, polytechnic_34, polytechnic_35, polytechnic_36,
-      polytechnic_37, polytechnic_38
-    ],
-    concerns: [
-      basis
-    ],
-    member: [
-      softvence, sm_technology, backbencher_studio, sparktech, scaleup
-    ]
-  }
   return (
     <div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 my-36 items-center justify-center container">
