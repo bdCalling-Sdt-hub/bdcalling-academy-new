@@ -67,10 +67,10 @@ const Exceptional = () => {
       polytechnic_37, polytechnic_38
     ],
     concerns: [
-      softvence, sm_technology, backbencher_studio, sparktech, scaleup
+      basis
     ],
     member: [
-      basis
+      softvence, sm_technology, backbencher_studio, sparktech, scaleup
     ]
   }
   return (

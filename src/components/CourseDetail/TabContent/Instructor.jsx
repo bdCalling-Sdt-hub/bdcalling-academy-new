@@ -2,7 +2,7 @@ import { imgUrl } from "@/config";
 
 const Instructor = ({ data }) => {
   const course = data;
-  console.log('object,', data)
+  // console.log('Instructor,', data)
   return (
     <div className="mt-5">
       {data?.map((item, index) => (
@@ -14,7 +14,7 @@ const Instructor = ({ data }) => {
 
           <img
             src={`${imgUrl}/${item?.image}`}
-            className="w-16 h-16 rounded-full"
+            className="w-16 h-16 rounded-full object-cover"
             alt=""
           />
           <div className="space-y-1">

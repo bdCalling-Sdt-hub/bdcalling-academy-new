@@ -2,9 +2,26 @@ import { Check } from "lucide-react";
 import curriculum from "../../../../public/db/curriculum.json";
 const Curriculum = ({ data }) => {
   const { solutions, certificate } = curriculum;
-
+  console.log('data', data?.curriculum)
   return (
     <div className="mt-5">
+      <div>
+        <h1 className="text-xl  font-bold -mb-4">
+          Curriculum
+        </h1>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 border border-[#2492EB] rounded-md my-8 p-5">
+          {data?.curriculum.map((item, index) => (
+            <div key={item}>
+              <div className="flex items-center gap-2">
+                <p>
+                  <Check size={20} color="#2492EB" />
+                </p>
+                <p>{item}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
       <div>
         <h1 className="text-xl  font-bold">
           What you will learn by doing the course

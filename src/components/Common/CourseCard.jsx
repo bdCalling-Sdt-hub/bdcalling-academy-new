@@ -59,8 +59,8 @@ const CourseCard = ({ course }) => {
           <h2 className="my-3 text-xl h-12 capitalize">{course?.course?.course_name}</h2>
           <div className=" space-y-2">
             <div className="lg:flex gap-4 items-center">
-              <h2 className="text-lg font-bold">{discount_price}BDT</h2>
-              <p className="line-through">BDT{course?.course?.price}</p>
+              <h2 className="text-lg font-bold">{course?.course?.price} BDT</h2>
+              {/* <p className="line-through">BDT{course?.course?.price}</p> */}
             </div>
             <div className="flex items-center gap-1 ">
               <div className="flex mb-4">

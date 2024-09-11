@@ -15,12 +15,6 @@
       "fullName": "Roney Saha",
       "expert": "AGM"
     },
-    
-    {
-      "image": "/images/team/Abir-Rahman.jpg",
-      "fullName": "Rahman Abir",
-      "expert": "Training Manager"
-    },
     {
       "image": "/images/team/Johirul-Islam-Mahir.jpg",
       "fullName": "Johirul Islam Mahir",
@@ -55,6 +49,21 @@
       "image": "/images/team/jashim.jpg",
       "fullName": "Md. Jashim Uddin",
       "expert": "Public Relation Executive"
+    },
+    {
+      "image": "/images/team/mittahul.jpg",
+      "fullName": "Mittahul Jannat",
+      "expert": "Student Counsellor"
+    },
+    {
+      "image": "/images/team/sakibul.jpg",
+      "fullName": "Md. Sakibul Islam",
+      "expert": "Mentor - Web Development"
+    },
+    {
+      "image": "/images/team/farzia.jpg",
+      "fullName": "Farzia Haque Farin",
+      "expert": "Senior Content Writer"
     }
   ]
 }
