@@ -33,7 +33,7 @@ const CourseCard = ({ course }) => {
         <img
           src={`${imgUrl}/${image}`}
           alt="course image"
-          className="rounded-t-lg w-full "
+          className="rounded-t-lg w-full h-[180px] object-cover"
         />
         <div className="p-3">
           <div className="flex items-center justify-between">
