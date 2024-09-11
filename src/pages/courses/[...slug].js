@@ -94,7 +94,7 @@ const CourseDetail = () => {
                 Course Fee
               </h2>
               <h2 className="text-2xl font-bold text-white my-2">
-                BDT {courseDetail.price}
+                BDT {courseDetail?.price}
               </h2>
 
               <Button
