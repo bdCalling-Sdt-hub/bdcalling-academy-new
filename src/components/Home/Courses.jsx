@@ -26,6 +26,7 @@ const Courses = ({ categories }) => {
         setLoading(false);
       });
   }, [title]);
+  
   return (
     <div className="container ">
       <div className="flex justify-between mt-24">
