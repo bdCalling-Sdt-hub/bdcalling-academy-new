@@ -100,9 +100,8 @@ const Exceptional = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 container mx-auto my-14 justify-center items-center gap-3">
         {
           associateData[tab]?.map((item, index) => {
-            // console.log(`${basePath}/${tab}/${item}`)
             return <div key={index} className="flex justify-center items-center">
-              <Image key={index} src={item} alt={item} width={100} height={100} />
+              <img key={index} src={item} alt={item} width={100} height={100} loading="lazy" />
             </div>
           })
         }
