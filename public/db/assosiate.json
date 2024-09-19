@@ -40,13 +40,13 @@
         "/images/assest/assosiate/working/38_polytechnic.png"
     ],
     "concerns": [
+        "/images/assest/assosiate/member/1_basis.png"
+    ],
+    "member": [
         "/images/assest/assosiate/concerns/1_softvence.png",
         "/images/assest/assosiate/concerns/2_sm_technology.png",
         "/images/assest/assosiate/concerns/3_backbencher_studio.png",
         "/images/assest/assosiate/concerns/4_sparktech.png",
         "/images/assest/assosiate/concerns/5_scaleup.png"
-    ],
-    "member": [
-        "/images/assest/assosiate/member/1_basis.png"
     ]
 }
