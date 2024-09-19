@@ -13,6 +13,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { baseUrl, imgUrl } from "@/config";
 import { usePathname } from "next/navigation";
+import ReactPlayer from "react-player";
 
 const StudentSuccess = ({ type }) => {
   const [videoLink, setVideoLink] = useState("");
@@ -56,14 +57,20 @@ const StudentSuccess = ({ type }) => {
         >
           {StoryData.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="relative w-full h-full">
+              <div className="relative w-full h-full bg-green-400">
                 <div className="w-full h-full">
-                  <video className="w-full h-full rounded-md" src={`${imgUrl}/${item?.
-                    file}`}></video>
+                  <ReactPlayer
+                    url={item?.file}
+                    playing={false}
+                    controls
+                    width='100%'
+                    height='100%'
+                    className='react-player'
+                  />
                 </div>
                 <div
-                  onClick={() => setVideoLink(`${imgUrl}/${item?.file}`)}
-                  className="absolute top-0 left-0 h-full w-full  flex justify-center items-center cursor-pointer"
+                  onClick={() => setVideoLink(item?.file)}
+                  className="absolute left-0 top-0  h-full w-full  flex justify-center items-center cursor-pointer"
                 >
                   <div className={`${styles.playBtn}`}>
                     <DialogTrigger>
@@ -78,12 +85,14 @@ const StudentSuccess = ({ type }) => {
 
         <DialogContent>
           <AspectRatio ratio={16 / 9} className="bg-muted">
-            <iframe
-              src={videoLink}
-              title="YouTube video player"
-              allow="autoplay;"
-              className="rounded-md w-full h-full"
-            ></iframe>
+            <ReactPlayer
+              url={videoLink}
+              playing={false}
+              controls
+              width='100%'
+              height='100%'
+              className='react-player'
+            />
           </AspectRatio>
         </DialogContent>
       </Dialog>

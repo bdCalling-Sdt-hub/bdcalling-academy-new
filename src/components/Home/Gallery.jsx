@@ -19,7 +19,7 @@ const Gallery = () => {
     paddingBottom: "50px",
   };
   useEffect(() => {
-    baseUrl.get('/gallery').then((res) => {
+    baseUrl.get('/gallery?per_page=999999').then((res) => {
       setGalleryData(Array.isArray(res?.data?.data?.data) ? res?.data?.data?.data : [])
     }).catch((err) => {
       console.log(err)
