@@ -14,7 +14,7 @@ const Event = () => {
     baseUrl
       .get("/event")
       .then((res) => setEvents(res?.data?.data?.data))
-      .catch((err) => console.log(err));
+      .catch((err) => {});
   }, []);
   const pathname = usePathname()
   return (

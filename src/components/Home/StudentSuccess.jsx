@@ -28,10 +28,10 @@ const StudentSuccess = ({ type }) => {
     baseUrl.get(`/success/story?type=${type || 'story'}`).then((res) => {
       Array.isArray(res?.data?.data) ? setStoryData(res?.data?.data) : setStoryData([])
     }).catch((err) => {
-      console.log(err)
+      // console.log(err)
     })
   }, [type])
-  console.log(`${imgUrl}/${StoryData?.[0]?.file}`)
+  // console.log(`${imgUrl}/${StoryData?.[0]?.file}`)
   const pathname = usePathname()
   return (
     <div className="container my-24">

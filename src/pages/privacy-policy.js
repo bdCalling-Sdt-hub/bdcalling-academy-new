@@ -7,7 +7,7 @@ const PrivacyPolicyPage = () => {
   useEffect(() => {
     baseUrl.get('/show/privacy').then((res) => {
       setPrivacy(res?.data?.data?.privacy)
-    }).catch((err) => console.log(err))
+    }).catch((err) => {})
   }, [])
   return (
     <div className="h-auto container py-8 " dangerouslySetInnerHTML={{ __html: privacy }}>

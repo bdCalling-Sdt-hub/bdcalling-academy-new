@@ -19,7 +19,7 @@ const Experts = () => {
     baseUrl
       .get("/mentors/all")
       .then((res) => setExpertList(res.data?.data))
-      .catch((err) => console.log(err));
+      .catch((err) => {});
   }, []);
   return (
     <div className="my-8 bg-blue-50 p-2 lg:p-5 rounded-md">

@@ -1,12 +1,10 @@
 import FlexItem from "@/components/Common/FlexItem";
 import CourseDetailDescription from "@/components/CourseDetail/CourseDetailDescription";
 import { Button } from "@/components/ui/button";
-import { toast } from "@/components/ui/use-toast";
 import { baseUrl } from "@/config";
 import RootLayout from "@/Layouts/RootLayout";
 import MetaTag from "@/shared/MetaTag";
 import { Clock, Globe, Presentation, Users } from "lucide-react";
-import { redirect } from "next/navigation";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
@@ -19,25 +17,22 @@ const CourseDetail = () => {
 
   useEffect(() => {
     if (Array.isArray(params) && params.length >= 2) {
-      console.log(params)
       baseUrl
         .get(`/courses/${params[1]}`)
         .then((res) => {
           setCourseDetail(res?.data?.data);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {});
       baseUrl
         .get(`/filter-courses?course_name=${params[0]}`)
         .then((res) => {
           setCourseData(res?.data?.data);
           // console.log(res)
         })
-        .catch((err) => console.log(err));
+        // .catch((err) => console.log(err));
     }
   }, [params]);
 
-  const course = courseDetail;
-  console.log('courseDetail', courseDetail)
   const features = [
     {
       icon: <Clock size={20} color="#2492EB" />,

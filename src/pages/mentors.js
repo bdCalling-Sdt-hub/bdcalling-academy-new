@@ -22,7 +22,7 @@ const Mentors = () => {
     baseUrl
       .get("/teachers")
       .then((res) => setExpertList(res.data?.teacher?.data))
-      .catch((err) => console.log(err));
+      .catch((err) => {});
   }, []);
 
   const categoryLists = ["Mentors", "Team"];

@@ -33,7 +33,7 @@ const CoursesPage = () => {
         `/filter-courses?per_page=${courseLoad}&course_type=${status} ${selectCategory ? `&course_category_id=${selectCategory}` : ''}${search ? `&course_name=${search}` : ''}`
       )
       .then((res) => {
-        console.log(res)
+        // console.log(res)
         setCourses(res.data?.data?.data);
         setLoading(false);
       })

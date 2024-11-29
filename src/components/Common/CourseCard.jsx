@@ -16,7 +16,7 @@ const CourseCard = ({ course }) => {
     courseName,
     discount_price,
   } = course;
-  console.log('course', course)
+  // console.log('course', course)
   //remain day calculate here
   const today = new Date();
   const courseStartDate = new Date(start_date);

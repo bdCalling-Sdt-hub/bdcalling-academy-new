@@ -8,7 +8,7 @@ import {
 } from "../ui/card";
 
 const ExpertCard = ({ data }) => {
-  console.log(data)
+  // console.log(data)
   const { image, fullName, expert } = data;
 
   const src = image?.startsWith("/") ? image : `${imgUrl}/${image}`;

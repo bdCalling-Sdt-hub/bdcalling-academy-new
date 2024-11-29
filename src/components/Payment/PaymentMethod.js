@@ -37,7 +37,7 @@ const PaymentMethod = ({ data }) => {
         },
       })
       .then((res) => setCouponPrice(res.data["coupon-price"]))
-      .catch((err) => console.log(err));
+      .catch((err) => {});
   };
 
   let amount;
@@ -77,7 +77,7 @@ const PaymentMethod = ({ data }) => {
           }
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
           setIsLoading(false);
         });
     }
@@ -98,7 +98,7 @@ const PaymentMethod = ({ data }) => {
           }
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
           setIsLoading(false);
         });
     }

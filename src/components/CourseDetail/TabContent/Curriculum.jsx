@@ -2,7 +2,7 @@ import { Check } from "lucide-react";
 import curriculum from "../../../../public/db/curriculum.json";
 const Curriculum = ({ data }) => {
   const { solutions, certificate } = curriculum;
-  console.log('data', data?.curriculum)
+  // console.log('data', data?.curriculum)
   return (
     <div className="mt-5">
       <div>

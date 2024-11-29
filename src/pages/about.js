@@ -5,6 +5,7 @@ import OurVision from "@/components/About/OurVision";
 import TotalCourse from "@/components/About/TotalCourse";
 import WhatBdCalling from "@/components/About/WhatBdCalling";
 import Subscribe from "@/components/Common/Subscribe";
+import OurPaymentMerchant from "@/components/Home/OurPaymentMerchant";
 import { baseUrl } from "@/config";
 import RootLayout from "@/Layouts/RootLayout";
 import MetaTag from "@/shared/MetaTag";
@@ -15,11 +16,12 @@ const AboutPage = () => {
   useEffect(() => {
     baseUrl.get('/show/about').then((res) => {
       setAbout(res?.data?.data?.about)
-    }).catch((err) => console.log(err))
+    }).catch((err) => { })
   }, [])
   return (
-    <div className="container" dangerouslySetInnerHTML={{ __html: about }}>
-      {/* <MetaTag title="About" />
+    <>
+      <div className="container" dangerouslySetInnerHTML={{ __html: about }}>
+        {/* <MetaTag title="About" />
       <Reveal>
         <About />
       </Reveal>
@@ -37,7 +39,11 @@ const AboutPage = () => {
           description="Unlock a world of knowledge and endless growth opportunities"
         />
       </Reveal> */}
-    </div>
+      </div>
+      <Reveal>
+        <OurPaymentMerchant />
+      </Reveal>
+    </>
   );
 };
 

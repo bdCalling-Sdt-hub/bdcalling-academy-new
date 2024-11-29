@@ -34,7 +34,7 @@ export const authOptions = {
           };
           return user;
         } catch (err) {
-          console.log(err);
+          // console.log(err);
         }
       },
     }),

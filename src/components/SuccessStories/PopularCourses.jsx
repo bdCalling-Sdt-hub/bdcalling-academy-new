@@ -9,7 +9,7 @@ const PopularCourses = () => {
     baseUrl
       .get(`/filter-courses`)
       .then((res) => setCourses(res.data?.data?.data))
-      .catch((err) => console.log(err));
+      .catch((err) => {});
   }, []);
 
   // const popularCourse = courses.filter((course) => course.popular === 1);

@@ -2,14 +2,14 @@ import { baseUrl, imgUrl } from "@/config";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 const Reviews = ({ data }) => {
-  console.log(data)
+  // console.log(data)
   const id = data?.course_id;
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
     baseUrl
       .get(`reviews/${id}`)
       .then((res) => setReviews(res?.data?.data))
-      .catch((err) => console.log(err));
+      .catch((err) => {});
   }, [id]);
 
   return (

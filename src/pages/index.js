@@ -5,7 +5,6 @@ import Event from "@/components/Home/Event";
 import Exceptional from "@/components/Home/Exceptional";
 import Gallery from "@/components/Home/Gallery";
 import JoinUs from "@/components/Home/JoinUs";
-import OurPaymentMerchant from "@/components/Home/OurPaymentMerchant";
 import RecordingCourse from "@/components/Home/RecordingCourse";
 import StudentSuccess from "@/components/Home/StudentSuccess";
 import Testimonial from "@/components/Home/Testimonial";
@@ -47,9 +46,6 @@ const HomePage = () => {
       </Reveal>
       <Reveal>
         <Gallery />
-      </Reveal>
-      <Reveal>
-        <OurPaymentMerchant />
       </Reveal>
       <Reveal>
         <JoinUs />

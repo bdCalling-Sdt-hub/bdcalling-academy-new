@@ -9,10 +9,10 @@ const VideoContent = ({ data }) => {
   useEffect(() => {
     baseUrl.get(`filter-courses?course_category_id=${data?.id}`)
       .then((res) => {
-        console.log('res', res)
+        // console.log('res', res)
       })
       .catch((err) => {
-        console.log(err)
+        // console.log(err)
       })
   }, [data?.id])
   return (

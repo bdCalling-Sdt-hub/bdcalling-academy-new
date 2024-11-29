@@ -37,7 +37,7 @@ const Register = () => {
         });
         setLoading(false);
       }
-      console.log(res)
+      // console.log(res)
       setError("");
       reset();
     } catch (err) {

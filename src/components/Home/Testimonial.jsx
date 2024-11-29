@@ -20,7 +20,7 @@ const Testimonial = () => {
   const batches = ['21st Batch', '22nd Batch', '23rd Batch', '24th Batch'];
   const courseTimes = ['3 month', '6 months',]
   const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
-  console.log(getRandomElement(courseTimes))
+  // console.log(getRandomElement(courseTimes))
   const formattedTestimonials = testimonialList?.map(testimonials => ({
     ...testimonials,
     batch: getRandomElement(batches),
@@ -37,7 +37,7 @@ const Testimonial = () => {
       setReviews(res?.data?.data)
     })
   }, [])
-  console.log(reviews)
+  // console.log(reviews)
 
   return (
     <div className="container">
@@ -72,8 +72,8 @@ const Testimonial = () => {
                     src={testimonial?.user?.image ? `${imgUrl}/${testimonial?.user?.image}` : profileImage}
                     className="w-24 h-24 rounded-full"
                     alt=""
-                    width={200}
-                    height={200}
+                    width={100}
+                    height={100}
                   />
                 </div>
                 <div>
