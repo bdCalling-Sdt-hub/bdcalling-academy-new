@@ -3,9 +3,12 @@ import axios from "axios";
 const cloud = true;
 const imgCloud = true;
 
-const url = 'https://mainserver.bdcallingacademy.com/api';
+const url = 'http://152.42.234.23/api';
 
-const imageUrl = 'https://mainserver.bdcallingacademy.com';
+const imageUrl = 'http://152.42.234.23';
+// const url = 'https://mainserver.bdcallingacademy.com/api';
+
+// const imageUrl = 'https://mainserver.bdcallingacademy.com';
 
 export const baseUrl = axios.create({
   baseURL: url,
