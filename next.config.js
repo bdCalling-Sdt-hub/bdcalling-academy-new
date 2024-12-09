@@ -12,6 +12,8 @@ const nextConfig = {
       { hostname: "server.bdcallingacademy.com" },
       { hostname: "https://www.bdcallingacademy.com" },
       { hostname: "www.bdcallingacademy.com" },
+      { hostname: "http://165.232.137.110" },
+      { hostname: "165.232.137.110" },
     ],
   },
 };
