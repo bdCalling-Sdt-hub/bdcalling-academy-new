@@ -3,9 +3,9 @@ import axios from "axios";
 const cloud = true;
 const imgCloud = true;
 
-const url = 'http://165.232.137.110:8000/api';
+const url = 'http://api.bdcallingacademy.com/api';
 
-const imageUrl = 'http://165.232.137.110:8000';
+const imageUrl = 'http://api.bdcallingacademy.com';
 // const url = 'https://mainserver.bdcallingacademy.com/api';
 
 // const imageUrl = 'https://mainserver.bdcallingacademy.com';
