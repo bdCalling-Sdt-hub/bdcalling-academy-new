@@ -1,29 +1,29 @@
-import ParallaxText from "@/animation/FramerMotion/ParallaxText";
-import Reveal from "@/animation/FramerMotion/Reveal";
-import useCategory from "@/hooks/useCategory";
-import styles from "@/styles/home.module.css";
-import { BookOpenCheck, Play, Star } from "lucide-react";
-import Link from "next/link";
-import { useState } from "react";
-import { AspectRatio } from "../ui/aspect-ratio";
-import { Button } from "../ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import ParallaxText from '@/animation/FramerMotion/ParallaxText'
+import Reveal from '@/animation/FramerMotion/Reveal'
+import useCategory from '@/hooks/useCategory'
+import styles from '@/styles/home.module.css'
+import { BookOpenCheck, Play, Star } from 'lucide-react'
+import Link from 'next/link'
+import { useState } from 'react'
+import { AspectRatio } from '../ui/aspect-ratio'
+import { Button } from '../ui/button'
+import { Dialog, DialogContent, DialogTrigger } from '../ui/dialog'
 
 const Banner = () => {
-  const [videoLink, setVideoLink] = useState("");
-  const { category: catagories } = useCategory();
+  const [videoLink, setVideoLink] = useState('')
+  const { category: catagories } = useCategory()
 
   const videoLinkLists = [
     {
       video:
-        "https://www.youtube.com/embed/FtsFZkw2h-A?autoplay=1&modestbranding=1&rel=0",
-      thumb: "/images/bannerThumbnail.jpg",
+        'https://www.youtube.com/embed/FtsFZkw2h-A?autoplay=1&modestbranding=1&rel=0',
+      thumb: '/images/bannerThumbnail.jpg',
     },
-  ];
+  ]
   const result = catagories
-    ?.map(item => item?.category_name)
+    ?.map((item) => item?.category_name)
     .map((name, index) => `${name}${index < catagories.length ? ' 🔹' : ''}`)
-    .join(' ');
+    .join(' ')
   return (
     <>
       <div className={styles.homeBanner}>
@@ -31,6 +31,9 @@ const Banner = () => {
           <div className="order-2 lg:order-1 w-full lg:w-[700px]">
             <Reveal>
               <h2 className="text-4xl  rounded bg-gradient-to-r from-[#93efff5b] to-[#bee1ffb2] text-[#2397fb] p-1 font-medium relative lg:w-4/6">
+                Where IT Crafts a Better Future
+              </h2>
+              {/* <h2 className="text-4xl  rounded bg-gradient-to-r from-[#93efff5b] to-[#bee1ffb2] text-[#2397fb] p-1 font-medium relative lg:w-4/6">
                 Let&#39;s Learn, Earn <br /> & Grow{" "}
                 <span
                   className=" text-4xl  text-[#586faffa]"
@@ -38,7 +41,7 @@ const Banner = () => {
                 >
                   𝓌𝒾𝓉𝒽
                 </span>
-              </h2>
+              </h2> */}
             </Reveal>
             <Reveal>
               <h1 className="text-6xl font-bold mt-5">
@@ -46,12 +49,18 @@ const Banner = () => {
               </h1>
             </Reveal>
             <Reveal>
-              <p className="text-[16px] my-6 lg:w-5/6">
+              <p className="text-[16px] my-6 lg:w-5/6 text-justify">
+                Get ready to embark on a journey of knowledge with our
+                innovative learning platform. Explore a wide range of courses
+                and interactive lessons designed by industry-expert instructors
+                to help you reach your full potential.
+              </p>
+              {/* <p className="text-[16px] my-6 lg:w-5/6">
                 An Innovative learning platform! Get ready to engage on a
                 journey of knowledge with our innovative learning platform.
                 Explore a wide range of courses, interactive lessons, and expert
                 instructors, all designed to help you reach your full potential.
-              </p>
+              </p> */}
             </Reveal>
             <Reveal>
               <div className="lg:flex  items-center gap-5">
@@ -120,15 +129,13 @@ const Banner = () => {
           Generation & Data Entry
         </ParallaxText> */}
         <ParallaxText baseVelocity={1}>
-          {
-            result
-          }
+          {result}
           {/* 🔹Wordpress Digital Marketing🔹Graphics Design🔹UX/UI Design🔹Lead
           Generation & Data Entry */}
         </ParallaxText>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Banner;
+export default Banner
