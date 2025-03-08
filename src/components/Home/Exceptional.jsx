@@ -19,9 +19,9 @@ const Exceptional = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 my-36 items-center justify-center container">
         <div className="relative">
           <img src="/images/exceptional.png" className="ml-auto " alt="image" />
-          <div className="absolute bottom-0 left-0 ">
+          {/* <div className="absolute bottom-0 left-0 ">
             <img src="/images/exceptional02.png" alt="image" />
-          </div>
+          </div> */}
           {/* <div className="absolute top-5 left-32 w-[120px] bg-white shadow text-center p-3 rounded-md">
             <div className="bg-primary w-12 h-12 rounded-md flex justify-center items-center mt-[-35px]">
               <Trophy color="#fff" size={40} strokeWidth={'0.75px'} />
