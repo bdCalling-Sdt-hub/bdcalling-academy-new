@@ -26,9 +26,9 @@ const HomePage = () => {
       <Reveal>
         <DynamicCourses categories={category} />
       </Reveal>
-      <Reveal>
+      {/* <Reveal>
         <RecordingCourse />
-      </Reveal>
+      </Reveal> */}
       <Reveal>
         <Exceptional />
       </Reveal>

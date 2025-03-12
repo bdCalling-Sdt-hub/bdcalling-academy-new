@@ -24,7 +24,7 @@ const Overview = ({ data }) => {
           <span className="font-bold">+88 01321231802</span> (09 Am to 06 Pm)
         </p>
       </div>
-      <div className="mt-5">
+      {/* <div className="mt-5">
         <h2 className="text-xl font-bold border-b pb-2 mb-4">Payment</h2>
         <p className="mb-5">If you want to join live batch and make payment-</p>
         <ul className="space-y-4">
@@ -39,7 +39,7 @@ const Overview = ({ data }) => {
           show up in your dashboard. Start the course according to your study
           plan.,
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };
