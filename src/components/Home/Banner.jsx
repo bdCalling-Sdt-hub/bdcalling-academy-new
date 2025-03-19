@@ -64,7 +64,7 @@ const Banner = () => {
             </Reveal>
             <Reveal>
               <div className="lg:flex  items-center gap-5">
-                <Link href="/courses" className="inline-block">
+                <Link href="/courses/offline" className="inline-block">
                   <Button className="flex items-center gap-2 py-6 bg-primary ">
                     <BookOpenCheck />
                     Browse Courses
